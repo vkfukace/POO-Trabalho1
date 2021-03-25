@@ -1,4 +1,4 @@
-package srcAstah.Entidades.RecursoHumano;
+package Entidades.RecursoHumano;
 
 public class Cozinheiro extends Pessoa {
 

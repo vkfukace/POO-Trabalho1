@@ -1,6 +1,4 @@
-package srcAstah.Entidades.RecursoMaterial;
-
-import srcAstah.String;
+package Entidades.RecursoMaterial;
 
 public class Material {
 

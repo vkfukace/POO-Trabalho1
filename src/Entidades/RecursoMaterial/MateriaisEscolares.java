@@ -1,4 +1,4 @@
-package srcAstah.Entidades.RecursoMaterial;
+package Entidades.RecursoMaterial;
 
 import java.util.Collection;
 

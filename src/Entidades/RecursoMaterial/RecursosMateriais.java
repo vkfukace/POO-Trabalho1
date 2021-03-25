@@ -1,6 +1,6 @@
-package srcAstah.Entidades.RecursoMaterial;
+package Entidades.RecursoMaterial;
 
-import srcAstah.Controle.OperacoesRecursos;
+import Controle.OperacoesRecursos;
 
 public class RecursosMateriais implements OperacoesRecursos {
 
@@ -10,14 +10,12 @@ public class RecursosMateriais implements OperacoesRecursos {
 
 	private MateriaisDidaticos materiaisDidaticos;
 
-
 	/**
 	 * @see srcAstah.Controle.OperacoesRecursos#adicionar()
 	 */
 	public void adicionar() {
 
 	}
-
 
 	/**
 	 * @see srcAstah.Controle.OperacoesRecursos#atualizar()
@@ -26,14 +24,12 @@ public class RecursosMateriais implements OperacoesRecursos {
 
 	}
 
-
 	/**
 	 * @see srcAstah.Controle.OperacoesRecursos#remover()
 	 */
 	public void remover() {
 
 	}
-
 
 	/**
 	 * @see srcAstah.Controle.OperacoesRecursos#relatorio()

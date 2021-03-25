@@ -1,6 +1,4 @@
-package srcAstah.Entidades.RecursoHumano;
-
-import srcAstah.String;
+package Entidades.RecursoHumano;
 
 public class Professor extends Pessoa {
 

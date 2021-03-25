@@ -1,4 +1,4 @@
-package srcAstah.Controle;
+package Controle;
 
 public abstract interface OperacoesRecursos {
 

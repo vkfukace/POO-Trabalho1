@@ -1,6 +1,6 @@
-package srcAstah.Entidades.RecursoHumano;
+package Entidades.RecursoHumano;
 
-import srcAstah.Controle.OperacoesRecursos;
+import Controle.OperacoesRecursos;
 import java.util.Collection;
 
 public class RecursosHumanos implements OperacoesRecursos {
@@ -17,14 +17,12 @@ public class RecursosHumanos implements OperacoesRecursos {
 
 	private Collection<Servente> servente;
 
-
 	/**
 	 * @see srcAstah.Controle.OperacoesRecursos#adicionar()
 	 */
 	public void adicionar() {
 
 	}
-
 
 	/**
 	 * @see srcAstah.Controle.OperacoesRecursos#atualizar()
@@ -33,14 +31,12 @@ public class RecursosHumanos implements OperacoesRecursos {
 
 	}
 
-
 	/**
 	 * @see srcAstah.Controle.OperacoesRecursos#remover()
 	 */
 	public void remover() {
 
 	}
-
 
 	/**
 	 * @see srcAstah.Controle.OperacoesRecursos#relatorio()
