@@ -4,10 +4,10 @@ import Entidades.RecursoMaterial.*;
 
 public class RecursosMateriais {
 
-	private MateriaisDidaticos materiaisEscolares;
+	private MateriaisDidaticos materiaisDidaticos;
 
 	private MateriaisLimpeza materiaisLimpeza;
 
-	private MateriaisEscolares materiaisDidaticos;
+	private MateriaisEscolares materiaisEscolares;
 
 }
