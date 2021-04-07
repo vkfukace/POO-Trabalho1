@@ -27,4 +27,23 @@ public class RecursosHumanos {
 		this.serventes = new HashMap<String, Servente>();
 	}
 
+	public boolean adicionar(int opcao, String rg, String nome, int idade) {
+		switch (opcao) {
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			break;
+		default:
+		}
+		return true;
+	}
+
 }
