@@ -27,4 +27,8 @@ public class RecursosHumanos {
 		this.serventes = new HashMap<String, Servente>();
 	}
 
+	public void adicionarProfessor(String rg, String nome, int idade) {
+
+	}
+
 }

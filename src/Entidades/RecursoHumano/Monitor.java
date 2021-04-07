@@ -1,13 +1,14 @@
 package Entidades.RecursoHumano;
 
 public class Monitor extends Pessoa {
-	private String regMonitor ;
+    private String regMonitor;
 
-	public String getRegMonitor() {
-		return this.regMonitor;
-	}
+    public Monitor(String regMonitor, String nome, String rg, int idade) {
+        super(nome, rg, idade);
+        this.regMonitor = regMonitor;
+    }
 
-	public void setRegMonitor(String regMonitor) {
-		this.regMonitor = regMonitor;
-	}
+    public String getRegMonitor() {
+        return this.regMonitor;
+    }
 }
