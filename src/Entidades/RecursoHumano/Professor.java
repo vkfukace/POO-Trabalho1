@@ -1,14 +1,14 @@
 package Entidades.RecursoHumano;
 
 public class Professor extends Pessoa {
-	private String regProfessor;
+	private int idProfessor;
 
-	public Professor(String regProfessor, String nome, String rg, int idade) {
+	public Professor(int idProfessor, String nome, String rg, int idade) {
 		super(nome, rg, idade);
-		this.regProfessor = regProfessor;
+		this.idProfessor = idProfessor;
 	}
 
-	public String getRegProfessor() {
-		return this.regProfessor;
+	public int getIdProfessor() {
+		return this.idProfessor;
 	}
 }

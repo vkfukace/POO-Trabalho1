@@ -16,7 +16,7 @@ public class MateriaisEscolares {
     }
 
     public void setLapis(int lapis) {
-        this.lapis = lapis;
+        this.lapis += lapis;
     }
 
     public int getCaderno() {
@@ -24,7 +24,7 @@ public class MateriaisEscolares {
     }
 
     public void setCaderno(int caderno) {
-        this.caderno = caderno;
+        this.caderno += caderno;
     }
 
     public int getCaneta() {
@@ -32,7 +32,7 @@ public class MateriaisEscolares {
     }
 
     public void setCaneta(int caneta) {
-        this.caneta = caneta;
+        this.caneta += caneta;
     }
 
     @Override

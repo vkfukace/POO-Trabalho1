@@ -20,7 +20,7 @@ public class MateriaisDidaticos {
     }
 
     public void setLivro(int livro) {
-        this.livro = livro;
+        this.livro += livro;
     }
 
     public int getQuadro() {
@@ -28,7 +28,7 @@ public class MateriaisDidaticos {
     }
 
     public void setQuadro(int quadro) {
-        this.quadro = quadro;
+        this.quadro += quadro;
     }
 
     public int getGiz() {
@@ -36,7 +36,7 @@ public class MateriaisDidaticos {
     }
 
     public void setGiz(int giz) {
-        this.giz = giz;
+        this.giz += giz;
     }
 
     public int getApagador() {
@@ -44,7 +44,7 @@ public class MateriaisDidaticos {
     }
 
     public void setApagador(int apagador) {
-        this.apagador = apagador;
+        this.apagador += apagador;
     }
 
     public int getPincel() {
@@ -52,7 +52,7 @@ public class MateriaisDidaticos {
     }
 
     public void setPincel(int pincel) {
-        this.pincel = pincel;
+        this.pincel += pincel;
     }
 
     @Override

@@ -1,14 +1,14 @@
 package Entidades.RecursoHumano;
 
 public class Servente extends Pessoa {
-	private String regServente;
+	private int idServente;
 
-	public Servente(String regServente, String nome, String rg, int idade) {
+	public Servente(int idServente, String nome, String rg, int idade) {
 		super(nome, rg, idade);
-		this.regServente = regServente;
+		this.idServente = idServente;
 	}
 
-	public String getRegServente() {
-		return this.regServente;
+	public int getIdServente() {
+		return this.idServente;
 	}
 }
