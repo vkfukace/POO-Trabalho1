@@ -8,6 +8,12 @@ public class Pessoa {
 
 	private int idade;
 
+	public Pessoa(String nome, String rg, int idade) {
+		this.nome = nome;
+		this.rg = rg;
+		this.idade = idade;
+	}
+
 	public String getNome() {
 		return this.nome;
 	}

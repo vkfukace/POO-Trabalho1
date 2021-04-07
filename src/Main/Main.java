@@ -8,7 +8,7 @@ public class Main {
         System.out.println("\n======== MENU ========");
         System.out.println("1 - Gerenciar");
         System.out.println("2 - Gerar relatorios");
-        System.out.println("3 - Busca");
+        System.out.println("3 - Buscar dados");
         System.out.println("4 - Sair");
         System.out.print("Insira a opcao: ");
     }
@@ -19,6 +19,7 @@ public class Main {
         
 
         // int opcao;
+        // int opcao2;
 
         // menu();
         // opcao = Integer.parseInt(input.nextLine()); // nextInt causava erros
@@ -27,12 +28,12 @@ public class Main {
         // switch (opcao) {
         // case 1:
         // System.out.println("\n======== MENU ========");
-        // System.out.println("1 - Cadastrar Recursos Humanos");
-        // System.out.println("2 - Cadastrar Recursos Materiais");
-        // System.out.println("3 - Atualizar Recursos Humanos");
-        // System.out.println("4 - Atualizar Recursos Materiais");
-        // System.out.println("5 - Remover Recursos Humanos");
-        // System.out.println("6 - Remover Recursos Materiais");
+        // System.out.println("1 - Cadastrar Recursos Materiais");
+        // System.out.println("2 - Atualizar Recursos Materiais");
+        // System.out.println("3 - Remover Recursos Materiais");
+        // System.out.println("4 - Cadastrar Recursos Humanos");
+        // System.out.println("5 - Atualizar Recursos Humanos");
+        // System.out.println("6 - Remover Recursos Humanos");
         // System.out.println("7 - Sair);
         // System.out.print("Insira a opcao: ");
             // switch(opcao2){
@@ -54,8 +55,9 @@ public class Main {
             // }
         // break;
         // case 2:
-        // System.out.println("\nLista de Clientes:");
-        // lista.listaClientes();
+        // System.out.println("\nRelatorio:");
+        // break;
+        // case 3:
         // break;
         // default:
         // System.out.println("\nOpcao Invalida!");
