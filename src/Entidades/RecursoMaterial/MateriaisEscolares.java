@@ -5,6 +5,12 @@ public class MateriaisEscolares {
     private int caderno;
     private int caneta;
 
+    public MateriaisEscolares() {
+        this.lapis = 0;
+        this.caderno = 0;
+        this.caneta = 0;
+    }
+
     public int getLapis() {
         return this.lapis;
     }

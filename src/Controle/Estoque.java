@@ -6,4 +6,9 @@ public class Estoque {
 
 	private RecursosMateriais recursosMateriais;
 
+	public Estoque() {
+		this.recursosHumanos = new RecursosHumanos();
+		this.recursosMateriais = new RecursosMateriais();
+	}
+
 }
