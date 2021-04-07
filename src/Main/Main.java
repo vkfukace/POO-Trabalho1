@@ -6,9 +6,10 @@ import java.util.Scanner;
 public class Main {
     public static void menu() {
         System.out.println("\n======== MENU ========");
-        System.out.println("1 - Inserir Cliente");
-        System.out.println("2 - Listar Clientes");
-        System.out.println("3 - Sair");
+        System.out.println("1 - Gerenciar");
+        System.out.println("2 - Gerar relatorios");
+        System.out.println("3 - Busca");
+        System.out.println("4 - Sair");
         System.out.print("Insira a opcao: ");
     }
 
@@ -23,13 +24,32 @@ public class Main {
         // while (opcao != 3) {
         // switch (opcao) {
         // case 1:
-        // System.out.print("\nInsira o nome do cliente: ");
-        // String nome = input.nextLine();
-        // System.out.print("Insira o telefone do cliente: ");
-        // String fone = input.nextLine();
-        // System.out.print("Insira a renda do cliente: ");
-        // float renda = Float.parseFloat(input.nextLine());
-        // lista.insere(new Cliente(nome, fone, renda));
+        // System.out.println("\n======== MENU ========");
+        // System.out.println("1 - Cadastrar Recursos Humanos");
+        // System.out.println("2 - Cadastrar Recursos Materiais");
+        // System.out.println("3 - Atualizar Recursos Humanos");
+        // System.out.println("4 - Atualizar Recursos Materiais");
+        // System.out.println("5 - Remover Recursos Humanos");
+        // System.out.println("6 - Remover Recursos Materiais");
+        // System.out.println("7 - Sair);
+        // System.out.print("Insira a opcao: ");
+            // switch(opcao2){
+            //     case 1:
+            //         break;
+            //     case 2:
+            //         break;
+            //     case 3:
+            //         break;
+            //     case 4:
+            //         break;
+            //     case 5:
+            //         break;
+            //     case 6:
+            //         break;
+            //     case 7:
+            //         break;
+            //     default:
+            // }
         // break;
         // case 2:
         // System.out.println("\nLista de Clientes:");
