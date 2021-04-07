@@ -1,20 +1,21 @@
 package Controle;
 
-import java.util.Collection;
+import java.util.HashMap;
+
 import Entidades.RecursoHumano.*;
 
 public class RecursosHumanos {
 
-	private Collection<Professor> professor;
+	private HashMap<String, Professor> professor;
 
-	private Collection<Aluno> aluno;
+	private HashMap<String, Aluno> aluno;
 
-	private Collection<Instrutor> instrutor;
+	private HashMap<String, Instrutor> instrutor;
 
-	private Collection<Monitor> monitor;
+	private HashMap<String, Monitor> monitor;
 
-	private Collection<Cozinheiro> cozinheiro;
+	private HashMap<String, Cozinheiro> cozinheiro;
 
-	private Collection<Servente> servente;
+	private HashMap<String, Servente> servente;
 
 }
