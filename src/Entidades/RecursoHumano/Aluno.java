@@ -2,14 +2,14 @@ package Entidades.RecursoHumano;
 
 public class Aluno extends Pessoa {
 
-	private String regAluno;
+	private int idAluno;
 
-	public Aluno(String regAluno, String nome, String rg, int idade) {
+	public Aluno(int idAluno, String nome, String rg, int idade) {
 		super(nome, rg, idade);
-		this.regAluno = regAluno;
+		this.idAluno = idAluno;
 	}
 
-	public String getRegAluno() {
-		return this.regAluno;
+	public int getIdAluno() {
+		return this.idAluno;
 	}
 }

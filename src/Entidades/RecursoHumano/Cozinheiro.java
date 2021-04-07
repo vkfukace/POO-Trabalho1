@@ -1,14 +1,14 @@
 package Entidades.RecursoHumano;
 
 public class Cozinheiro extends Pessoa {
-	private String regCozinheiro;
+	private int idCozinheiro;
 
-	public Cozinheiro(String regCozinheiro, String nome, String rg, int idade) {
+	public Cozinheiro(int idCozinheiro, String nome, String rg, int idade) {
 		super(nome, rg, idade);
-		this.regCozinheiro = regCozinheiro;
+		this.idCozinheiro = idCozinheiro;
 	}
 
-	public String getRegCozinheiro() {
-		return this.regCozinheiro;
+	public int getIdCozinheiro() {
+		return this.idCozinheiro;
 	}
 }
