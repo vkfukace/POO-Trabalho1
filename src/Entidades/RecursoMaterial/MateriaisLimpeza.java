@@ -18,7 +18,7 @@ public class MateriaisLimpeza {
     }
 
     public void setAlvejante(int alvejante) {
-        this.alvejante = alvejante;
+        this.alvejante += alvejante;
     }
 
     public int getSabaoPo() {
@@ -26,7 +26,7 @@ public class MateriaisLimpeza {
     }
 
     public void setSabaoPo(int sabaoPo) {
-        this.sabaoPo = sabaoPo;
+        this.sabaoPo += sabaoPo;
     }
 
     public int getAguaSanitaria() {
@@ -34,7 +34,7 @@ public class MateriaisLimpeza {
     }
 
     public void setAguaSanitaria(int aguaSanitaria) {
-        this.aguaSanitaria = aguaSanitaria;
+        this.aguaSanitaria += aguaSanitaria;
     }
 
     public int getSabaoBarra() {
@@ -42,7 +42,7 @@ public class MateriaisLimpeza {
     }
 
     public void setSabaoBarra(int sabaoBarra) {
-        this.sabaoBarra = sabaoBarra;
+        this.sabaoBarra += sabaoBarra;
     }
 
     @Override

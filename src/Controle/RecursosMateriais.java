@@ -11,17 +11,41 @@ public class RecursosMateriais {
 
 	private MateriaisEscolares materiaisEscolares;
 
+	
+
 	public RecursosMateriais() {
 		this.materiaisDidaticos = new MateriaisDidaticos();
 		this.materiaisLimpeza = new MateriaisLimpeza();
 		this.materiaisEscolares = new MateriaisEscolares();
 	}
 
-	public int AdicionarRecusoMaterial(){
-		Scanner input = new Scanner(System.in);
-		//mostrar um menu com opcoes 1- materiaisDidaticos 2-materiaisLimpeza 3- materiasEscolares
+	public int AdicionarRecusoMaterialDidatico(int livro,int giz,int apagador, int pincel){
+		
+		this.materiaisDidaticos.setLivro(livro);
+		this.materiaisDidaticos.setGiz(giz);
+		this.materiaisDidaticos.setApagador(apagador);
+		this.materiaisDidaticos.setPincel(pincel);
+
+		return 1 ;
+	}
+
+	public int AdicionarRecusoMaterialLimpeza(int alvejante,int sabaoPo,int aguaSanitaria, int sabaoBarra){
+		
+		this.materiaisLimpeza.setAlvejante(alvejante);
+		this.materiaisLimpeza.setSabaoPo(sabaoPo);
+		this.materiaisLimpeza.setAguaSanitaria(aguaSanitaria);
+		this.materiaisLimpeza.setSabaoBarra(sabaoBarra);
+		
+		return 1 ;
+	}
+	public int AdicionarRecusoMaterialEscolar(int lapis,int caderno,int caneta){
+		
+		this.materiaisEscolares.setLapis(lapis);
+		this.materiaisEscolares.setCaderno(caderno);
+		this.materiaisEscolares.setCaneta(caneta);
 		
 
+		return 1 ;
 	}
 
 
