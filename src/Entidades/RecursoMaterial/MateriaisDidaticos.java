@@ -7,6 +7,14 @@ public class MateriaisDidaticos {
     private int apagador;
     private int pincel;
 
+    public MateriaisDidaticos() {
+        this.livro = 0;
+        this.quadro = 0;
+        this.giz = 0;
+        this.apagador = 0;
+        this.pincel = 0;
+    }
+
     public int getLivro() {
         return this.livro;
     }

@@ -6,6 +6,13 @@ public class MateriaisLimpeza {
     private int aguaSanitaria;
     private int sabaoBarra;
 
+    public MateriaisLimpeza() {
+        this.alvejante = 0;
+        this.sabaoPo = 0;
+        this.aguaSanitaria = 0;
+        this.sabaoBarra = 0;
+    }
+
     public int getAlvejante() {
         return this.alvejante;
     }

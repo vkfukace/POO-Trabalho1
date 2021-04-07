@@ -10,4 +10,10 @@ public class RecursosMateriais {
 
 	private MateriaisEscolares materiaisEscolares;
 
+	public RecursosMateriais() {
+		this.materiaisDidaticos = new MateriaisDidaticos();
+		this.materiaisLimpeza = new MateriaisLimpeza();
+		this.materiaisEscolares = new MateriaisEscolares();
+	}
+
 }
