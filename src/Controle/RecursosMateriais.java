@@ -1,6 +1,7 @@
 package Controle;
 
 import Entidades.RecursoMaterial.*;
+import java.util.Scanner;
 
 public class RecursosMateriais {
 
@@ -14,6 +15,13 @@ public class RecursosMateriais {
 		this.materiaisDidaticos = new MateriaisDidaticos();
 		this.materiaisLimpeza = new MateriaisLimpeza();
 		this.materiaisEscolares = new MateriaisEscolares();
+	}
+
+	public int AdicionarRecusoMaterial(){
+		Scanner input = new Scanner(System.in);
+		//mostrar um menu com opcoes 1- materiaisDidaticos 2-materiaisLimpeza 3- materiasEscolares
+		
+
 	}
 
 
