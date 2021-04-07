@@ -16,6 +16,10 @@ public class MateriaisEscolares {
     }
 
     public void setLapis(int lapis) {
+        this.lapis = lapis;
+    }
+
+    public void addLapis(int lapis) {
         this.lapis += lapis;
     }
 
@@ -24,6 +28,9 @@ public class MateriaisEscolares {
     }
 
     public void setCaderno(int caderno) {
+        this.caderno = caderno;
+    }
+    public void addCaderno(int caderno) {
         this.caderno += caderno;
     }
 
@@ -32,6 +39,9 @@ public class MateriaisEscolares {
     }
 
     public void setCaneta(int caneta) {
+        this.caneta = caneta;
+    }
+    public void addCaneta(int caneta) {
         this.caneta += caneta;
     }
 
