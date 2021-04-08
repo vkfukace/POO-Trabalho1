@@ -1,9 +1,11 @@
 package Main;
 
-import Controle.Estoque;
 import java.util.Scanner;
 
+import Controle.Estoque;
+
 public class Main {
+    
     public static void menu() {
         System.out.println("\n======== MENU ========");
         System.out.println("1 - Gerenciar");
@@ -17,17 +19,16 @@ public class Main {
         System.out.println("\n======== MENU ========");
         System.out.println("1 - Cadastrar Recursos Materiais");
         System.out.println("2 - Atualizar Recursos Materiais");
-        System.out.println("3 - Remover Recursos Materiais");
+        /* System.out.println("3 - Remover Recursos Materiais");
         System.out.println("4 - Cadastrar Recursos Humanos");
         System.out.println("5 - Atualizar Recursos Humanos");
-        System.out.println("6 - Remover Recursos Humanos");
+        System.out.println("6 - Remover Recursos Humanos"); */
         System.out.println("7 - Sair");
         System.out.print("Insira a opcao: ");
     }
     public static void main(String[] args) {
-        // ArrayCliente lista = new ArrayCliente(1000);
         Scanner input = new Scanner(System.in);
-        
+        Estoque estoque = new Estoque() ;
 
         // int opcao;
         // int opcao2;
