@@ -6,16 +6,23 @@ public class Estoque  {
 
 	private RecursosMateriais recursosMateriais;
 
+
+	public RecursosHumanos getRecursosHumanos() {
+		return this.recursosHumanos;
+	}
+
+	public RecursosMateriais getRecursosMateriais() {
+		return this.recursosMateriais;
+	}
+
 	public Estoque() {
 		this.recursosHumanos = new RecursosHumanos();
 		this.recursosMateriais = new RecursosMateriais();
 	}
 
-	public void estoqueRecursosMateriais(){
-		this.recursosMateriais.getMateriaisDidaticos().toString() ;
-		this.recursosMateriais.getMateriaisEscolares().toString() ;
-		this.recursosMateriais.getMateriaisLimpeza().toString() ;
-		
+	public String estoqueRecursosMateriais(){
+		return getRecursosMateriais().getMateriaisDidaticos().toString() + "\n" + getRecursosMateriais().getMateriaisEscolares().toString() + "\n" +getRecursosMateriais().getMateriaisLimpeza().toString() ;
+
 	}
 	
 
