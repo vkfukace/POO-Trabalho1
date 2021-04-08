@@ -21,8 +21,7 @@ public class MateriaisEscolares {
         this.lapis += lapis;
     }
     public void remLapis(int lapis) {
-        this.lapis -= lapis;
-        if(this.getLapis()<0) this.lapis = 0 ;
+        if(this.getLapis() - lapis >= 0) this.lapis -= lapis;
     }
 
     public int getCaderno() {
@@ -35,8 +34,7 @@ public class MateriaisEscolares {
         this.caderno += caderno;
     }
     public void remCaderno(int caderno) {
-        this.caderno -= caderno;
-        if(this.getCaderno()<0) this.caderno = 0 ;
+        if(this.getCaderno() - caderno >= 0) this.caderno -= caderno;
     }
 
     public int getCaneta() {
@@ -49,8 +47,7 @@ public class MateriaisEscolares {
         this.caneta += caneta;
     }
     public void remCaneta(int caneta) {
-        this.caneta -= caneta;
-        if(this.getCaneta()<0) this.caneta = 0 ;
+        if(this.getCaneta() - caderno >= 0) this.caderno -= caderno;
     }
 
     @Override

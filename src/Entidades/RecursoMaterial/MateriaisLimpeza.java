@@ -23,8 +23,7 @@ public class MateriaisLimpeza {
         this.alvejante += alvejante;
     }
     public void remAlvejante(int alvejante) {
-        this.alvejante -= alvejante;
-        if(this.getAlvejante()<0) this.alvejante = 0 ;
+        if(this.getAlvejante() - alvejante >= 0) this.alvejante -= alvejante;
     }
 
     public int getSabaoPo() {
@@ -37,8 +36,7 @@ public class MateriaisLimpeza {
         this.sabaoPo += sabaoPo;
     }
     public void remSabaoPo(int sabaoPo) {
-        this.sabaoPo -= sabaoPo;
-        if(this.getSabaoPo()<0) this.sabaoPo = 0 ;
+        if(this.getSabaoPo() - sabaoPo >= 0) this.sabaoPo -= sabaoPo;
     }
 
     public int getAguaSanitaria() {
@@ -51,8 +49,7 @@ public class MateriaisLimpeza {
         this.aguaSanitaria += aguaSanitaria;
     }
     public void remAguaSanitaria(int aguaSanitaria) {
-        this.aguaSanitaria -= aguaSanitaria;
-        if(this.getAguaSanitaria()<0) this.aguaSanitaria = 0 ;
+        if(this.getAguaSanitaria() - aguaSanitaria >= 0) this.aguaSanitaria -= aguaSanitaria;
     }
 
     public int getSabaoBarra() {
@@ -65,8 +62,7 @@ public class MateriaisLimpeza {
         this.sabaoBarra += sabaoBarra;
     }
     public void remSabaoBarra(int sabaoBarra) {
-        this.sabaoBarra -= sabaoBarra;
-        if(this.getSabaoBarra()<0) this.sabaoBarra = 0 ;
+        if(this.getSabaoBarra() - sabaoBarra >= 0) this.sabaoBarra -= sabaoBarra;
     }
 
 

@@ -25,8 +25,7 @@ public class MateriaisDidaticos {
         this.livro += livro;
     }
     public void remLivro(int livro) {
-        this.livro -= livro;
-        if(this.getLivro()<0) this.livro = 0 ;
+        if(this.getLivro() - livro >= 0) this.livro -= livro;
     }
 
     public int getQuadro() {
@@ -39,8 +38,7 @@ public class MateriaisDidaticos {
         this.quadro += quadro;
     }
     public void remQuadro(int quadro) {
-        this.quadro -= quadro;
-        if(this.getQuadro()<0) this.quadro = 0 ;
+        if(this.getQuadro() - quadro >= 0) this.quadro -= quadro;
     }
 
     public int getGiz() {
@@ -53,8 +51,7 @@ public class MateriaisDidaticos {
         this.giz += giz;
     }
     public void remGiz(int giz) {
-        this.giz -= giz;
-        if(this.getGiz()<0) this.giz = 0 ;
+        if(this.getGiz() - giz >= 0) this.giz -= giz;
     }
 
     public int getApagador() {
@@ -67,8 +64,7 @@ public class MateriaisDidaticos {
         this.apagador += apagador;
     }
     public void remApagador(int apagador) {
-        this.apagador -= apagador;
-        if(this.getApagador()<0) this.apagador = 0 ;
+        if(this.getApagador() - apagador >= 0) this.apagador -= apagador;
     }
     
     public int getPincel() {
@@ -81,8 +77,7 @@ public class MateriaisDidaticos {
         this.pincel += pincel;
     }
     public void remPincel(int pincel) {
-        this.pincel -= pincel;
-        if(this.getPincel()<0) this.pincel = 0 ;
+        if(this.getPincel() - pincel >= 0) this.pincel -= pincel;
     }
 
     @Override

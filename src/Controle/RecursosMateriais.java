@@ -28,103 +28,105 @@ public class RecursosMateriais {
 		return this.materiaisEscolares;
 	}
 
-	public int AdicionarRecusoMaterialDidatico(int livro,int giz,int apagador, int pincel){
+	public boolean AdicionarRecusoMaterialDidatico(int livro,int giz,int apagador, int pincel){
 		if(livro >= 0 && giz >=0 && apagador>=0 && pincel>=0){
 			this.materiaisDidaticos.addLivro(livro);
 			this.materiaisDidaticos.addGiz(giz);
 			this.materiaisDidaticos.addApagador(apagador);
 			this.materiaisDidaticos.addPincel(pincel);
-			return 1 ;
-		}else return 0 ;
+			return true ;
+		}else return false ;
 
-		
 	}
-	public int AtualizarRecusoMaterialDidatico(int livro,int giz,int apagador, int pincel){
-		
-		this.materiaisDidaticos.setLivro(livro);
-		this.materiaisDidaticos.setGiz(giz);
-		this.materiaisDidaticos.setApagador(apagador);
-		this.materiaisDidaticos.setPincel(pincel);
-
-		return 1 ;
+	public boolean AtualizarRecusoMaterialDidatico(int livro,int giz,int apagador, int pincel){
+		if(livro >= 0 && giz >=0 && apagador>=0 && pincel>=0){
+			this.materiaisDidaticos.setLivro(livro);
+			this.materiaisDidaticos.setGiz(giz);
+			this.materiaisDidaticos.setApagador(apagador);
+			this.materiaisDidaticos.setPincel(pincel);
+			return true ;
+		}
+		else return false ;
 	}
-	public int RemoverRecusoMaterialDidatico(int livro,int giz,int apagador, int pincel){
+	public boolean RemoverRecusoMaterialDidatico(int livro,int giz,int apagador, int pincel){
 		if(materiaisDidaticos.getLivro() == 0 && materiaisDidaticos.getGiz() == 0 && materiaisDidaticos.getApagador()==0 && materiaisDidaticos.getPincel()==0){
-			return 0 ;
+			return false;
 		}else{
 			this.materiaisDidaticos.remLivro(livro);
 			this.materiaisDidaticos.remGiz(giz);
 			this.materiaisDidaticos.remApagador(apagador);
 			this.materiaisDidaticos.remPincel(pincel);
-			return 1 ;
+			return true ;
 		}
 		
 		
 	}
 
-	public int AdicionarRecusoMaterialLimpeza(int alvejante,int sabaoPo,int aguaSanitaria, int sabaoBarra){
-		
-		this.materiaisLimpeza.addAlvejante(alvejante);
-		this.materiaisLimpeza.addSabaoPo(sabaoPo);
-		this.materiaisLimpeza.addAguaSanitaria(aguaSanitaria);
-		this.materiaisLimpeza.addSabaoBarra(sabaoBarra);
-		
-		return 1 ;
+	public boolean AdicionarRecusoMaterialLimpeza(int alvejante,int sabaoPo,int aguaSanitaria, int sabaoBarra){
+		if(alvejante >= 0 && sabaoPo >=0 && aguaSanitaria>=0 && sabaoBarra>=0){
+			this.materiaisLimpeza.addAlvejante(alvejante);
+			this.materiaisLimpeza.addSabaoPo(sabaoPo);
+			this.materiaisLimpeza.addAguaSanitaria(aguaSanitaria);
+			this.materiaisLimpeza.addSabaoBarra(sabaoBarra);
+			return true ;
+		}
+		else return false;
 	}
-	public int AtualizarRecusoMaterialLimpeza(int alvejante,int sabaoPo,int aguaSanitaria, int sabaoBarra){
-		
-		this.materiaisLimpeza.setAlvejante(alvejante);
-		this.materiaisLimpeza.setSabaoPo(sabaoPo);
-		this.materiaisLimpeza.setAguaSanitaria(aguaSanitaria);
-		this.materiaisLimpeza.setSabaoBarra(sabaoBarra);
-		
-		return 1 ;
+	public boolean AtualizarRecusoMaterialLimpeza(int alvejante,int sabaoPo,int aguaSanitaria, int sabaoBarra){
+		if(alvejante >= 0 && sabaoPo >=0 && aguaSanitaria>=0 && sabaoBarra>=0){
+			this.materiaisLimpeza.setAlvejante(alvejante);
+			this.materiaisLimpeza.setSabaoPo(sabaoPo);
+			this.materiaisLimpeza.setAguaSanitaria(aguaSanitaria);
+			this.materiaisLimpeza.setSabaoBarra(sabaoBarra);
+			return true ;
+		}
+		else return false ;
 	}
-	public int RemoverRecusoMaterialLimpeza(int alvejante,int sabaoPo,int aguaSanitaria, int sabaoBarra){
+	public boolean RemoverRecusoMaterialLimpeza(int alvejante,int sabaoPo,int aguaSanitaria, int sabaoBarra){
 		if(materiaisLimpeza.getAlvejante() == 0 && materiaisLimpeza.getSabaoPo() == 0 && materiaisLimpeza.getAguaSanitaria()==0 && materiaisLimpeza.getSabaoBarra()==0){
-			return 0 ;
+			return false ;
 		}else{
 			this.materiaisLimpeza.remAlvejante(alvejante);
 			this.materiaisLimpeza.remSabaoPo(sabaoPo);
 			this.materiaisLimpeza.remAguaSanitaria(aguaSanitaria);
 			this.materiaisLimpeza.remSabaoBarra(sabaoBarra);
-			return 1 ;
+			return true ;
 		}
 		
 		
 	}
 
-	public int AdicionarRecusoMaterialEscolar(int lapis,int caderno,int caneta){
-		
-		this.materiaisEscolares.addLapis(lapis);
-		this.materiaisEscolares.addCaderno(caderno);
-		this.materiaisEscolares.addCaneta(caneta);
-	
-		return 1 ;
+	public boolean AdicionarRecusoMaterialEscolar(int lapis,int caderno,int caneta){
+		if(lapis >= 0 && caderno >=0 && caneta>=0){
+			this.materiaisEscolares.addLapis(lapis);
+			this.materiaisEscolares.addCaderno(caderno);
+			this.materiaisEscolares.addCaneta(caneta);
+			return true;
+		}
+		else return false ;
 	}
-	public int AtualizarRecusoMaterialEscolar(int lapis,int caderno,int caneta){
-		
-		this.materiaisEscolares.setLapis(lapis);
-		this.materiaisEscolares.setCaderno(caderno);
-		this.materiaisEscolares.setCaneta(caneta);
-	
-		return 1 ;
+	public boolean AtualizarRecusoMaterialEscolar(int lapis,int caderno,int caneta){
+		if(lapis >= 0 && caderno >=0 && caneta>=0){
+			this.materiaisEscolares.setLapis(lapis);
+			this.materiaisEscolares.setCaderno(caderno);
+			this.materiaisEscolares.setCaneta(caneta);
+			return true ;
+		}
+		else return false ;
 	}
-	public int RemoverRecusoMaterialEscolar(int lapis,int caderno,int caneta){
+	public boolean RemoverRecusoMaterialEscolar(int lapis,int caderno,int caneta){
 		if(materiaisEscolares.getLapis() == 0 && materiaisEscolares.getCaderno() == 0 && materiaisEscolares.getCaneta()==0){
-			return 0 ;
+			return false ;
 		}else{
 			this.materiaisEscolares.remLapis(lapis);
 			this.materiaisEscolares.remCaderno(caderno);
 			this.materiaisEscolares.remCaneta(caneta);
-			return 1 ;
+			return true ;
 		}
 		
 		
 	}
 
-
-	
 
 }
  
