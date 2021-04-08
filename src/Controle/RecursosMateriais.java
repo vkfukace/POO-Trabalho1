@@ -16,6 +16,18 @@ public class RecursosMateriais {
 		this.materiaisEscolares = new MateriaisEscolares();
 	}
 
+	public MateriaisDidaticos getMateriaisDidaticos() {
+		return this.materiaisDidaticos;
+	}
+
+	public MateriaisLimpeza getMateriaisLimpeza() {
+		return this.materiaisLimpeza;
+	}
+
+	public MateriaisEscolares getMateriaisEscolares() {
+		return this.materiaisEscolares;
+	}
+
 	public int AdicionarRecusoMaterialDidatico(int livro,int giz,int apagador, int pincel){
 		if(livro >= 0 && giz >=0 && apagador>=0 && pincel>=0){
 			this.materiaisDidaticos.addLivro(livro);
@@ -44,9 +56,10 @@ public class RecursosMateriais {
 			this.materiaisDidaticos.remGiz(giz);
 			this.materiaisDidaticos.remApagador(apagador);
 			this.materiaisDidaticos.remPincel(pincel);
+			return 1 ;
 		}
 		
-		return 1 ;
+		
 	}
 
 	public int AdicionarRecusoMaterialLimpeza(int alvejante,int sabaoPo,int aguaSanitaria, int sabaoBarra){
@@ -67,17 +80,18 @@ public class RecursosMateriais {
 		
 		return 1 ;
 	}
-	public int RemoverRecusoMaterialLimpeza(int livro,int giz,int apagador, int pincel){
-		if(materiaisDidaticos.getLivro() == 0 && materiaisDidaticos.getGiz() == 0 && materiaisDidaticos.getApagador()==0 && materiaisDidaticos.getPincel()==0){
+	public int RemoverRecusoMaterialLimpeza(int alvejante,int sabaoPo,int aguaSanitaria, int sabaoBarra){
+		if(materiaisLimpeza.getAlvejante() == 0 && materiaisLimpeza.getSabaoPo() == 0 && materiaisLimpeza.getAguaSanitaria()==0 && materiaisLimpeza.getSabaoBarra()==0){
 			return 0 ;
 		}else{
-			this.materiaisDidaticos.remLivro(livro);
-			this.materiaisDidaticos.remGiz(giz);
-			this.materiaisDidaticos.remApagador(apagador);
-			this.materiaisDidaticos.remPincel(pincel);
+			this.materiaisLimpeza.remAlvejante(alvejante);
+			this.materiaisLimpeza.remSabaoPo(sabaoPo);
+			this.materiaisLimpeza.remAguaSanitaria(aguaSanitaria);
+			this.materiaisLimpeza.remSabaoBarra(sabaoBarra);
+			return 1 ;
 		}
 		
-		return 1 ;
+		
 	}
 
 	public int AdicionarRecusoMaterialEscolar(int lapis,int caderno,int caneta){
@@ -96,19 +110,21 @@ public class RecursosMateriais {
 	
 		return 1 ;
 	}
-	public int RemoverRecusoMaterialEscolar(int livro,int giz,int apagador, int pincel){
-		if(materiaisDidaticos.getLivro() == 0 && materiaisDidaticos.getGiz() == 0 && materiaisDidaticos.getApagador()==0 && materiaisDidaticos.getPincel()==0){
+	public int RemoverRecusoMaterialEscolar(int lapis,int caderno,int caneta){
+		if(materiaisEscolares.getLapis() == 0 && materiaisEscolares.getCaderno() == 0 && materiaisEscolares.getCaneta()==0){
 			return 0 ;
 		}else{
-			this.materiaisDidaticos.remLivro(livro);
-			this.materiaisDidaticos.remGiz(giz);
-			this.materiaisDidaticos.remApagador(apagador);
-			this.materiaisDidaticos.remPincel(pincel);
+			this.materiaisEscolares.remLapis(lapis);
+			this.materiaisEscolares.remCaderno(caderno);
+			this.materiaisEscolares.remCaneta(caneta);
+			return 1 ;
 		}
 		
-		return 1 ;
+		
 	}
 
+
+	
 
 }
  
