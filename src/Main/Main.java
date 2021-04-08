@@ -15,7 +15,7 @@ public class Main {
         System.out.print("Insira a opcao: ");
     }
 
-    public static void menu2(){
+    public static void menu2() {
         System.out.println("\n======== MENU ========");
         System.out.println("1 - Cadastrar Recursos Materiais");
         System.out.println("2 - Atualizar Recursos Materiais");
@@ -26,6 +26,7 @@ public class Main {
         System.out.println("7 - Sair");
         System.out.print("Insira a opcao: ");
     }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Estoque estoque = new Estoque() ;
@@ -41,23 +42,23 @@ public class Main {
         // case 1:
         // menu2()
         // opcao2 = Integer.parseInt(input.nextLine());
-        //     switch(opcao2){
-        //     case 1:
-        //         break;
-        //     case 2:
-        //         break;
-        //     case 3:
-        //         break;
-        //     case 4:
-        //         break;
-        //     case 5:
-        //         break;
-        //     case 6:
-        //         break;
-        //     case 7:
-        //         break;
-        //     default:
-        //}
+        // switch(opcao2){
+        // case 1:
+        // break;
+        // case 2:
+        // break;
+        // case 3:
+        // break;
+        // case 4:
+        // break;
+        // case 5:
+        // break;
+        // case 6:
+        // break;
+        // case 7:
+        // break;
+        // default:
+        // }
         // break;
         // case 2:
         // System.out.println("\nRelatorio:");
