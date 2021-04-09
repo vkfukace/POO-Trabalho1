@@ -4,7 +4,7 @@ public class MateriaisEscolares {
     private int lapis;
     private int caderno;
     private int caneta;
-
+    //lapisAtual e lapisEstoque para fazer o gerenciamente de distribuicao
     public MateriaisEscolares() {
         this.lapis = 0;
         this.caderno = 0;
@@ -20,8 +20,11 @@ public class MateriaisEscolares {
     public void addLapis(int lapis) {
         this.lapis += lapis;
     }
-    public void remLapis(int lapis) {
-        if(this.getLapis() - lapis >= 0) this.lapis -= lapis;
+    public boolean remLapis(int lapis) {
+        if(this.getLapis() - lapis >= 0){
+            this.lapis -= lapis;
+            return true ;
+        }else return false ;
     }
 
     public int getCaderno() {
@@ -33,8 +36,11 @@ public class MateriaisEscolares {
     public void addCaderno(int caderno) {
         this.caderno += caderno;
     }
-    public void remCaderno(int caderno) {
-        if(this.getCaderno() - caderno >= 0) this.caderno -= caderno;
+    public boolean remCaderno(int caderno) {
+        if(this.getCaderno() - caderno >= 0){
+            this.caderno -= caderno;
+            return true ;
+        }else return false ;
     }
 
     public int getCaneta() {
@@ -46,8 +52,11 @@ public class MateriaisEscolares {
     public void addCaneta(int caneta) {
         this.caneta += caneta;
     }
-    public void remCaneta(int caneta) {
-        if(this.getCaneta() - caderno >= 0) this.caderno -= caderno;
+    public boolean remCaneta(int caneta) {
+        if(this.getCaneta() - caneta >= 0){
+            this.caneta -= caneta;
+            return true ;
+        }else return false ;
     }
 
     @Override

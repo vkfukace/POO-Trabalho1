@@ -22,8 +22,11 @@ public class MateriaisLimpeza {
     public void addAlvejante(int alvejante) {
         this.alvejante += alvejante;
     }
-    public void remAlvejante(int alvejante) {
-        if(this.getAlvejante() - alvejante >= 0) this.alvejante -= alvejante;
+    public boolean remAlvejante(int alvejante) {
+        if(this.getAlvejante() - alvejante >= 0){
+            this.alvejante -= alvejante;
+            return true ;
+        }else return false ;
     }
 
     public int getSabaoPo() {
@@ -35,8 +38,11 @@ public class MateriaisLimpeza {
     public void addSabaoPo(int sabaoPo) {
         this.sabaoPo += sabaoPo;
     }
-    public void remSabaoPo(int sabaoPo) {
-        if(this.getSabaoPo() - sabaoPo >= 0) this.sabaoPo -= sabaoPo;
+    public boolean remSabaoPo(int sabaoPo) {
+        if(this.getSabaoPo() - sabaoPo >= 0){
+            this.sabaoPo -= sabaoPo;
+            return true ;
+        }else return false ;
     }
 
     public int getAguaSanitaria() {
@@ -48,8 +54,11 @@ public class MateriaisLimpeza {
     public void addAguaSanitaria(int aguaSanitaria) {
         this.aguaSanitaria += aguaSanitaria;
     }
-    public void remAguaSanitaria(int aguaSanitaria) {
-        if(this.getAguaSanitaria() - aguaSanitaria >= 0) this.aguaSanitaria -= aguaSanitaria;
+    public boolean remAguaSanitaria(int aguaSanitaria) {
+        if(this.getAguaSanitaria() - aguaSanitaria >= 0){
+            this.aguaSanitaria -= aguaSanitaria;
+            return true ;
+        }else return false ;
     }
 
     public int getSabaoBarra() {
@@ -61,8 +70,11 @@ public class MateriaisLimpeza {
     public void addSabaoBarra(int sabaoBarra) {
         this.sabaoBarra += sabaoBarra;
     }
-    public void remSabaoBarra(int sabaoBarra) {
-        if(this.getSabaoBarra() - sabaoBarra >= 0) this.sabaoBarra -= sabaoBarra;
+    public boolean remSabaoBarra(int sabaoBarra) {
+        if(this.getSabaoBarra() - sabaoBarra >= 0){
+            this.sabaoBarra -= sabaoBarra;
+            return true ;
+        }else return false ;
     }
 
 

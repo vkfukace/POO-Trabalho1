@@ -24,8 +24,11 @@ public class MateriaisDidaticos {
     public void addLivro(int livro) {
         this.livro += livro;
     }
-    public void remLivro(int livro) {
-        if(this.getLivro() - livro >= 0) this.livro -= livro;
+    public boolean remLivro(int livro) {
+        if(this.getLivro() - livro >= 0){
+            this.livro -= livro;
+            return true ;
+        }else return false ;
     }
 
     public int getQuadro() {
@@ -37,8 +40,11 @@ public class MateriaisDidaticos {
     public void addQuadro(int quadro) {
         this.quadro += quadro;
     }
-    public void remQuadro(int quadro) {
-        if(this.getQuadro() - quadro >= 0) this.quadro -= quadro;
+    public boolean remQuadro(int quadro) {
+        if(this.getQuadro() - quadro >= 0){
+            this.quadro -= quadro;
+            return true ;
+        }else return false ;
     }
 
     public int getGiz() {
@@ -50,8 +56,11 @@ public class MateriaisDidaticos {
     public void addGiz(int giz) {
         this.giz += giz;
     }
-    public void remGiz(int giz) {
-        if(this.getGiz() - giz >= 0) this.giz -= giz;
+    public boolean remGiz(int giz) {
+        if(this.getGiz() - giz >= 0){
+            this.giz -= giz;
+            return true ;
+        }else return false ;
     }
 
     public int getApagador() {
@@ -63,8 +72,11 @@ public class MateriaisDidaticos {
     public void addApagador(int apagador) {
         this.apagador += apagador;
     }
-    public void remApagador(int apagador) {
-        if(this.getApagador() - apagador >= 0) this.apagador -= apagador;
+    public boolean remApagador(int apagador) {
+        if(this.getApagador() - apagador >= 0){
+            this.apagador -= apagador;
+            return true ;
+        }else return false ;
     }
     
     public int getPincel() {
@@ -76,8 +88,11 @@ public class MateriaisDidaticos {
     public void addPincel(int pincel) {
         this.pincel += pincel;
     }
-    public void remPincel(int pincel) {
-        if(this.getPincel() - pincel >= 0) this.pincel -= pincel;
+    public boolean remPincel(int pincel) {
+        if(this.getPincel() - pincel >= 0){
+            this.pincel -= pincel;
+            return true ;
+        }else return false ;
     }
 
     @Override

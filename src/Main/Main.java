@@ -6,17 +6,26 @@ import Controle.Estoque;
 import Controle.RecursosMateriais;
 
 public class Main {
-    
+    //fazer variaves de estoque em cada recursoMaterial para consultar antes de fazer requisao
+    //se tiver estoque requisao eh feita
+    //se nao espera o mes virar para repor o estoque
     public static void menu2() {
         System.out.println("\n======== MENU ========");
-        System.out.println("1 - Cadastrar Recursos Materiais");
+        System.out.println("1 - Requisicao de Recursos Materiais");
         System.out.println("2 - Atualizar Recursos Materiais");
-        System.out.println("3 - Mostrar Estoque Recursos Materiais");
-        System.out.println("4 - Remover Recursos Materiais");
-        /*System.out.println("4 - Cadastrar Recursos Humanos");
-        System.out.println("5 - Atualizar Recursos Humanos");
+        System.out.println("3 - Remover Recursos Materiais");
+        System.out.println("4 - Mostrar Estoque Recursos Materiais");
+        System.out.println("5 - Buscar Recursos Materiais");
+        System.out.println("6 - Cadastrar Recursos Humanos");
+        System.out.println("7 - Atualizar Recursos Humanos");
+        System.out.println("8 - Remover Recursos Humanos");
+        System.out.println("9 - Mostrar Estoque Recursos Humanos");
+        System.out.println("10 - Buscar Recursos Humanos");
+        System.out.println("11 - Preset de quantidade de recursos para distribuicao no começo do mes");
+        System.out.println("12 - Relatorio que vai ser gerado automaticamente no fim da seman");
+        /*System.out.println("5 - Atualizar Recursos Humanos");
         System.out.println("6 - Remover Recursos Humanos"); */
-        System.out.println("4 - Sair");
+        System.out.println("6 - Sair");
         System.out.print("Insira a opcao: ");
     }
 
@@ -35,6 +44,22 @@ public class Main {
         System.out.println("2 - Remover Material Escolar");
         System.out.println("3 - Remover Material Limpeza");
     }
+    public static void menubuscaRecursoMaterial(){
+        System.out.println("1 - Buscar Material Didatico");
+        System.out.println("2 - Buscar Material Escolar");
+        System.out.println("3 - Buscar Material Limpeza");
+    }
+
+    public static String buscaMaterialDidatico(RecursosMateriais aux) {
+        return aux.getMateriaisDidaticos().toString() ;
+    }
+    public static String buscaMaterialEscolar(RecursosMateriais aux) {
+        return aux.getMateriaisEscolares().toString() ;
+    }
+    public static String buscaMaterialLimpeza(RecursosMateriais aux) {
+        return aux.getMateriaisLimpeza().toString() ;
+    }
+
 
     public static boolean cadastrarMaterialDidatico(RecursosMateriais aux){
         Scanner input = new Scanner(System.in) ;
@@ -45,7 +70,7 @@ public class Main {
             System.out.println(listaNomes[i]);
             listaAux[i] = Integer.parseInt(input.nextLine());
         }
-        return aux.AdicionarRecusoMaterialDidatico(listaAux[0], listaAux[1], listaAux[2], listaAux[3]);
+        return aux.AdicionarRecusoMaterialDidatico(listaAux[0], listaAux[1], listaAux[2], listaAux[3], listaAux[4]);
     }
     public static boolean cadastrarMaterialEscolar(RecursosMateriais aux){
         Scanner input = new Scanner(System.in) ;
@@ -82,7 +107,7 @@ public class Main {
             System.out.println(listaNomes[i]);
             listaAux[i] = Integer.parseInt(input.nextLine());
         }
-        return aux.AtualizarRecusoMaterialDidatico(listaAux[0], listaAux[1], listaAux[2], listaAux[3]);
+        return aux.AtualizarRecusoMaterialDidatico(listaAux[0], listaAux[1], listaAux[2], listaAux[3], listaAux[4]);
         
         
     }
@@ -120,7 +145,7 @@ public class Main {
             System.out.println(listaNomes[i]);
             listaAux[i] = Integer.parseInt(input.nextLine());
         }
-        return aux.RemoverRecusoMaterialDidatico(listaAux[0], listaAux[1], listaAux[2], listaAux[3]);    
+        return aux.RemoverRecusoMaterialDidatico(listaAux[0], listaAux[1], listaAux[2], listaAux[3], listaAux[4]);    
     }
     public static boolean removerMaterialEscolar(RecursosMateriais aux){
         Scanner input = new Scanner(System.in) ;
@@ -162,8 +187,8 @@ public class Main {
             
             switch(opcao){
 
-                case 1:
-                //cadastrar recursos materiais
+                case 1: //cadastrar recursos materiais
+                
                     menuCadastroRecursoMaterial() ;
                     op = Integer.parseInt(input.nextLine()) ;
                     switch(op){
@@ -186,7 +211,7 @@ public class Main {
                             break;
                     }
                     break;
-                case 2:
+                case 2: //atualizar recursos materiais
                     menuAtualizarRecursoMaterial();
                     op = Integer.parseInt(input.nextLine()) ;
                     switch(op){
@@ -205,7 +230,7 @@ public class Main {
                     }
 
                     break;
-                case 3:
+                case 3: //remover recursos materiais
                     menuRemoverRecursoMaterial();
                     op = Integer.parseInt(input.nextLine()) ;
                     switch(op){
@@ -223,14 +248,29 @@ public class Main {
                             break;
                     }
                     break;
-                case 4:
-                    //relatorio
+                case 4: //relatorio
+
                     System.out.println(estoque.estoqueRecursosMateriais());
                     break;
-
+                
+                case 5: //busca
+                    menubuscaRecursoMaterial();
+                    op = Integer.parseInt(input.nextLine()) ;
+                    switch(op){
+                        case 1://buscar material didatico
+                            System.out.println(buscaMaterialDidatico(estoque.getRecursosMateriais()));
+                            break;
+                        case 2://buscar material Escolar
+                            System.out.println(buscaMaterialEscolar(estoque.getRecursosMateriais()));
+                            break;
+                        case 3://buscar material Limpeza
+                            System.out.println(buscaMaterialLimpeza(estoque.getRecursosMateriais()));
+                            break;
+                    }
+                    break;
             }
             
-        }while(opcao != 4) ;
+        }while(opcao != 6) ;
         
     }
 }
