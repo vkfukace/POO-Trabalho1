@@ -11,4 +11,9 @@ public class Servente extends Pessoa {
 	public int getIdServente() {
 		return this.idServente;
 	}
+
+	@Override
+	public String toString() {
+		return "{" + " idServente='" + getIdServente() + "', " + super.toString() + "}";
+	}
 }

@@ -1,5 +1,6 @@
 package Controle;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 import Entidades.RecursoHumano.*;
@@ -7,16 +8,18 @@ import Entidades.RecursoHumano.*;
 public class RecursosHumanos {
 
 	private HashMap<String, Professor> professores;
-
 	private HashMap<String, Aluno> alunos;
-
 	private HashMap<String, Instrutor> instrutores;
-
 	private HashMap<String, Monitor> monitores;
-
 	private HashMap<String, Cozinheiro> cozinheiros;
-
 	private HashMap<String, Servente> serventes;
+
+	private int contIDProfessor;
+	private int contIDAluno;
+	private int contIDInstrutor;
+	private int contIDMonitor;
+	private int contIDCozinheiro;
+	private int contIDServente;
 
 	public RecursosHumanos() {
 		this.professores = new HashMap<String, Professor>();
@@ -25,6 +28,12 @@ public class RecursosHumanos {
 		this.monitores = new HashMap<String, Monitor>();
 		this.cozinheiros = new HashMap<String, Cozinheiro>();
 		this.serventes = new HashMap<String, Servente>();
+		this.contIDProfessor = 0;
+		this.contIDAluno = 0;
+		this.contIDInstrutor = 0;
+		this.contIDMonitor = 0;
+		this.contIDCozinheiro = 0;
+		this.contIDServente = 0;
 	}
 
 	// Adicionar
@@ -35,7 +44,7 @@ public class RecursosHumanos {
 		if (this.professores.containsKey(rg)) {
 			return false;
 		}
-		int idProfessor = this.professores.size() + 1;
+		int idProfessor = ++this.contIDProfessor;
 		this.professores.put(rg, new Professor(idProfessor, nome, rg, idade));
 		return true;
 	}
@@ -44,7 +53,7 @@ public class RecursosHumanos {
 		if (this.alunos.containsKey(rg)) {
 			return false;
 		}
-		int idAluno = this.alunos.size() + 1;
+		int idAluno = ++this.contIDAluno;
 		this.alunos.put(rg, new Aluno(idAluno, nome, rg, idade));
 		return true;
 	}
@@ -53,7 +62,7 @@ public class RecursosHumanos {
 		if (this.instrutores.containsKey(rg)) {
 			return false;
 		}
-		int idInstrutor = this.instrutores.size() + 1;
+		int idInstrutor = ++this.contIDInstrutor;
 		this.instrutores.put(rg, new Instrutor(idInstrutor, nome, rg, idade));
 		return true;
 	}
@@ -62,7 +71,7 @@ public class RecursosHumanos {
 		if (this.monitores.containsKey(rg)) {
 			return false;
 		}
-		int idMonitor = this.monitores.size() + 1;
+		int idMonitor = ++this.contIDMonitor;
 		this.monitores.put(rg, new Monitor(idMonitor, nome, rg, idade));
 		return true;
 	}
@@ -71,7 +80,7 @@ public class RecursosHumanos {
 		if (this.cozinheiros.containsKey(rg)) {
 			return false;
 		}
-		int idCozinheiro = this.cozinheiros.size() + 1;
+		int idCozinheiro = ++this.contIDCozinheiro;
 		this.cozinheiros.put(rg, new Cozinheiro(idCozinheiro, nome, rg, idade));
 		return true;
 	}
@@ -80,7 +89,7 @@ public class RecursosHumanos {
 		if (this.serventes.containsKey(rg)) {
 			return false;
 		}
-		int idServente = this.serventes.size() + 1;
+		int idServente = ++this.contIDServente;
 		this.serventes.put(rg, new Servente(idServente, nome, rg, idade));
 		return true;
 	}
@@ -193,5 +202,64 @@ public class RecursosHumanos {
 			return true;
 		}
 		return false;
+	}
+
+	// Funções print
+	private void printProfessores() {
+		Collection<Professor> listaProfessores = this.professores.values();
+		System.out.println("Lista de Professores:");
+		for (Professor p : listaProfessores) {
+			System.out.println("\t" + p.toString());
+		}
+	}
+
+	private void printAlunos() {
+		Collection<Aluno> listaAlunos = this.alunos.values();
+		System.out.println("Lista de Alunos:");
+		for (Aluno a : listaAlunos) {
+			System.out.println("\t" + a.toString());
+		}
+	}
+
+	private void printInstrutores() {
+		Collection<Instrutor> listaInstrutores = this.instrutores.values();
+		System.out.println("Lista de Instrutores:");
+		for (Instrutor i : listaInstrutores) {
+			System.out.println("\t" + i.toString());
+		}
+	}
+
+	private void printMonitores() {
+		Collection<Monitor> listaMonitores = this.monitores.values();
+		System.out.println("Lista de Monitores:");
+		for (Monitor m : listaMonitores) {
+			System.out.println("\t" + m.toString());
+		}
+	}
+
+	private void printCozinheiros() {
+		Collection<Cozinheiro> listaCozinheiros = this.cozinheiros.values();
+		System.out.println("Lista de Cozinheiros:");
+		for (Cozinheiro c : listaCozinheiros) {
+			System.out.println("\t" + c.toString());
+		}
+	}
+
+	private void printServentes() {
+		Collection<Servente> listaServentes = this.serventes.values();
+		System.out.println("Lista de Serventes:");
+		for (Servente s : listaServentes) {
+			System.out.println("\t" + s.toString());
+		}
+	}
+
+	public void printRH() {
+		System.out.println("Recursos Humanos\n");
+		this.printProfessores();
+		this.printAlunos();
+		this.printInstrutores();
+		this.printMonitores();
+		this.printCozinheiros();
+		this.printServentes();
 	}
 }

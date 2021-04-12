@@ -11,4 +11,10 @@ public class Cozinheiro extends Pessoa {
 	public int getIdCozinheiro() {
 		return this.idCozinheiro;
 	}
+
+	@Override
+	public String toString() {
+		return "{" + " idCozinheiro='" + getIdCozinheiro() + "', " + super.toString() + "}";
+	}
+
 }

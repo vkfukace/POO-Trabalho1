@@ -11,4 +11,10 @@ public class Monitor extends Pessoa {
     public int getIdMonitor() {
         return this.idMonitor;
     }
+
+    @Override
+    public String toString() {
+        return "{" + " idMonitor='" + getIdMonitor() + "', " + super.toString() + "}";
+    }
+
 }

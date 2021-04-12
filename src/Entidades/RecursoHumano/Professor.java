@@ -11,4 +11,10 @@ public class Professor extends Pessoa {
 	public int getIdProfessor() {
 		return this.idProfessor;
 	}
+
+	@Override
+	public String toString() {
+		return "{" + " idProfessor='" + getIdProfessor() + "', " + super.toString() + "}";
+	}
+
 }

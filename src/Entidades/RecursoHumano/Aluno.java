@@ -12,4 +12,10 @@ public class Aluno extends Pessoa {
 	public int getIdAluno() {
 		return this.idAluno;
 	}
+
+	@Override
+	public String toString() {
+		return "{" + " idAluno='" + getIdAluno() + "', " + super.toString() + "}";
+	}
+
 }

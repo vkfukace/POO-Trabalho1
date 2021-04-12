@@ -11,4 +11,10 @@ public class Instrutor extends Pessoa {
     public int getIdInstrutor() {
         return this.idInstrutor;
     }
+
+    @Override
+    public String toString() {
+        return "{" + " idInstrutor='" + getIdInstrutor() + "', " + super.toString() + "}";
+    }
+
 }
