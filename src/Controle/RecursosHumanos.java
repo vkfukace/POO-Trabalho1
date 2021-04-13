@@ -36,6 +36,32 @@ public class RecursosHumanos {
 		this.contIDServente = 0;
 	}
 
+
+	public HashMap<String,Professor> getProfessores() {
+		return this.professores;
+	}
+
+	public HashMap<String,Aluno> getAlunos() {
+		return this.alunos;
+	}
+
+	public HashMap<String,Instrutor> getInstrutores() {
+		return this.instrutores;
+	}
+
+	public HashMap<String,Monitor> getMonitores() {
+		return this.monitores;
+	}
+
+	public HashMap<String,Cozinheiro> getCozinheiros() {
+		return this.cozinheiros;
+	}
+
+	public HashMap<String,Servente> getServentes() {
+		return this.serventes;
+	}
+
+
 	// Adicionar
 	// As funções retornam true se foi possível adicionar,
 	// false se já existe pessoa com o RG dado.
