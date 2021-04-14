@@ -1,29 +1,29 @@
 package Controle;
 
-public class Estoque  {
+public class Estoque {
 
-	private RecursosHumanos recursosHumanos;
+	private RecursosHumanos rh;
 
-	private RecursosMateriais recursosMateriais;
-
+	private RecursosMateriais rm;
 
 	public RecursosHumanos getRecursosHumanos() {
-		return this.recursosHumanos;
+		return this.rh;
 	}
 
 	public RecursosMateriais getRecursosMateriais() {
-		return this.recursosMateriais;
+		return this.rm;
 	}
 
 	public Estoque() {
-		this.recursosHumanos = new RecursosHumanos();
-		this.recursosMateriais = new RecursosMateriais();
+		this.rh = new RecursosHumanos();
+		this.rm = new RecursosMateriais();
 	}
 
-	public String estoqueRecursosMateriais(){
-		return getRecursosMateriais().getMateriaisDidaticos().toString() + "\n" + getRecursosMateriais().getMateriaisEscolares().toString() + "\n" +getRecursosMateriais().getMateriaisLimpeza().toString() ;
+	public String estoqueRecursosMateriais() {
+		return getRecursosMateriais().getMateriaisDidaticos().toString() + "\n"
+				+ getRecursosMateriais().getMateriaisEscolares().toString() + "\n"
+				+ getRecursosMateriais().getMateriaisLimpeza().toString();
 
 	}
-	
 
 }

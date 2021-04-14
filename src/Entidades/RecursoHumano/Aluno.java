@@ -1,18 +1,15 @@
 package Entidades.RecursoHumano;
-import Controle.RecursosMateriais;
+
 import Entidades.RecursoMaterial.MateriaisEscolares;
+
 public class Aluno extends Pessoa {
 
 	private int idAluno;
-	private MateriaisEscolares matEscolar ;
+	private MateriaisEscolares matEscolar;
 
-	
 	public MateriaisEscolares getMatEscolar() {
 		return this.matEscolar;
 	}
-
-
-
 
 	public Aluno(int idAluno, String nome, String rg, int idade) {
 		super(nome, rg, idade);
@@ -29,8 +26,13 @@ public class Aluno extends Pessoa {
 		return "{" + " idAluno='" + getIdAluno() + "', " + super.toString() + "}";
 	}
 
-	public void requisicaoMatEscolar(){}
-	public void atualizarMatEscolar(){}
-	public void removerMatEscolar(){}
+	public void requisicaoMatEscolar() {
+	}
+
+	public void atualizarMatEscolar() {
+	}
+
+	public void removerMatEscolar() {
+	}
 
 }
