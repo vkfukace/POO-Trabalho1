@@ -22,7 +22,8 @@ public class Professor extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "{" + " idProfessor='" + getIdProfessor() + "', " + super.toString() + "}";
+		return "{" + " idProfessor='" + getIdProfessor() + "', " + super.toString() + "recursos="
+				+ getMatDidatico().toString() + "}";
 	}
 
 	public void requisicaoMatDidatico() {

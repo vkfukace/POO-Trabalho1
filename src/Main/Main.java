@@ -17,13 +17,13 @@ public class Main {
      * requisao é adicionado o recurso ao funcionario e decrementado no estoque
      * Quarto, o relatorio geral vai ter uma opcao so pra mostrar que funciona
      */
-    public static void inicial(Estoque estoque, FuncoesAux faux, Scanner input) {
+    public static void inicial(Estoque estoque, Scanner input) {
         boolean c;
         System.out.println("\n======== MENU ========");
         System.out.println("Distribuicao para os estoques");
         System.out.println("Materiais Didaticos");
         do {
-            if (!faux.atualizarMaterialDidatico(estoque.getRecursosMateriais(), input)) {
+            if (!estoque.atualizarMaterialDidatico(input)) {
                 System.out.println("voce digitou algo errado, material Didatico nao atualizado");
                 System.out.println("Repita o processo");
                 c = false;
@@ -33,7 +33,7 @@ public class Main {
 
         System.out.println("Materiais Escolares");
         do {
-            if (!faux.atualizarMaterialEscolar(estoque.getRecursosMateriais(), input)) {
+            if (!estoque.atualizarMaterialEscolar(input)) {
                 System.out.println("voce digitou algo errado, material Escolar nao atualiado");
                 System.out.println("Repita o processo");
                 c = false;
@@ -45,7 +45,7 @@ public class Main {
         System.out.println("Materiais limpeza");
         do {
 
-            if (!faux.atualizarMaterialLimpeza(estoque.getRecursosMateriais(), input)) {
+            if (!estoque.atualizarMaterialLimpeza(input)) {
                 c = false;
                 System.out.println("voce digitou algo errado, material de Limpeza nao atualiado");
                 System.out.println("Repita o processo");
@@ -58,7 +58,6 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         Estoque estoque = new Estoque();
-        FuncoesAux faux = new FuncoesAux();
         int opcao;
         int op;
         Menu menu = new Menu();
@@ -68,27 +67,27 @@ public class Main {
             opcao = Integer.parseInt(input.nextLine());
             switch (opcao) {
             case 1:// cadastrar professores
-                if (!faux.cadastrarProfessor(estoque.getRecursosHumanos(), input))
+                if (!estoque.cadastrarProfessor(input))
                     System.out.println("voce digitou algo errado, professor nao cadastrado");
                 break;
             case 2:// cadastrar Alunos
-                if (!faux.cadastrarAluno(estoque.getRecursosHumanos(), input))
+                if (!estoque.cadastrarAluno(input))
                     System.out.println("voce digitou algo errado, aluno nao cadastrado");
                 break;
             case 3:// cadastrar Instrutor
-                if (!faux.cadastrarInstrutor(estoque.getRecursosHumanos(), input))
+                if (!estoque.cadastrarInstrutor(input))
                     System.out.println("voce digitou algo errado, instrutor nao cadastrado");
                 break;
             case 4:// cadastrar Monitor
-                if (!faux.cadastrarMonitor(estoque.getRecursosHumanos(), input))
+                if (!estoque.cadastrarMonitor(input))
                     System.out.println("voce digitou algo errado, monitor nao cadastrado");
                 break;
             case 5:// cadastrar Cozinheiro
-                if (!faux.cadastrarCozinheiro(estoque.getRecursosHumanos(), input))
+                if (!estoque.cadastrarCozinheiro(input))
                     System.out.println("voce digitou algo errado, cozinheiro nao cadastrado");
                 break;
             case 6:// cadastrar Servente
-                if (!faux.cadastrarServente(estoque.getRecursosHumanos(), input))
+                if (!estoque.cadastrarServente(input))
                     System.out.println("voce digitou algo errado, servente nao cadastrado");
                 break;
             }
@@ -111,7 +110,7 @@ public class Main {
             } while (qtd <= 0);
 
         } else {
-            inicial(estoque, faux, input);
+            inicial(estoque, input);
         }
 
         do {
@@ -129,17 +128,17 @@ public class Main {
 
                 case 1:// cadastrar material didatico
 
-                    if (!faux.cadastrarMaterialDidatico(estoque.getRecursosMateriais(), input))
+                    if (!estoque.cadastrarMaterialDidatico(input))
                         System.out.println("voce digitou algo errado, material Didatico nao cadastrado");
 
                     break;
                 case 2:// cadastrar material Escolar
-                    if (!faux.cadastrarMaterialEscolar(estoque.getRecursosMateriais(), input))
+                    if (!estoque.cadastrarMaterialEscolar(input))
                         System.out.println("voce digitou algo errado, material Escolar nao cadastrado");
 
                     break;
                 case 3:// cadastrar material Limpeza
-                    if (!faux.cadastrarMaterialLimpeza(estoque.getRecursosMateriais(), input))
+                    if (!estoque.cadastrarMaterialLimpeza(input))
                         System.out.println("voce digitou algo errado, material de Limpeza nao cadastrado");
 
                     break;
@@ -150,15 +149,15 @@ public class Main {
                 op = Integer.parseInt(input.nextLine());
                 switch (op) {
                 case 1:// atualizar material didatico
-                    if (!faux.atualizarMaterialDidatico(estoque.getRecursosMateriais(), input))
+                    if (!estoque.atualizarMaterialDidatico(input))
                         System.out.println("voce digitou algo errado, material Didatico nao atualizado");
                     break;
                 case 2:// atualizar material Escolar
-                    if (!faux.atualizarMaterialEscolar(estoque.getRecursosMateriais(), input))
+                    if (!estoque.atualizarMaterialEscolar(input))
                         System.out.println("voce digitou algo errado, material Escolar nao atualiado");
                     break;
                 case 3:// atualizar material Limpeza
-                    if (!faux.atualizarMaterialLimpeza(estoque.getRecursosMateriais(), input))
+                    if (!estoque.atualizarMaterialLimpeza(input))
                         System.out.println("voce digitou algo errado, material de Limpeza nao atualiado");
                     break;
                 }
@@ -169,15 +168,15 @@ public class Main {
                 op = Integer.parseInt(input.nextLine());
                 switch (op) {
                 case 1:// remover material didatico
-                    if (!faux.removerMaterialDidatico(estoque.getRecursosMateriais(), input))
+                    if (!estoque.removerMaterialDidatico(input))
                         System.out.println("Quantidade ja  eh 0, material Didatico nao removido");
                     break;
                 case 2:// remover material Escolar
-                    if (!faux.removerMaterialEscolar(estoque.getRecursosMateriais(), input))
+                    if (!estoque.removerMaterialEscolar(input))
                         System.out.println("Quantidade ja  eh 0, material Escolar nao removido");
                     break;
                 case 3:// remover material Limpeza
-                    if (!faux.removerMaterialLimpeza(estoque.getRecursosMateriais(), input))
+                    if (!estoque.removerMaterialLimpeza(input))
                         System.out.println("Quantidade ja  eh 0, material de Limpeza nao removido");
                     break;
                 }
@@ -192,13 +191,13 @@ public class Main {
                 op = Integer.parseInt(input.nextLine());
                 switch (op) {
                 case 1:// buscar material didatico
-                    System.out.println(faux.buscaMaterialDidatico(estoque.getRecursosMateriais()));
+                    System.out.println(estoque.getRecursosMateriais().getMateriaisDidaticos().toString());
                     break;
                 case 2:// buscar material Escolar
-                    System.out.println(faux.buscaMaterialEscolar(estoque.getRecursosMateriais()));
+                    System.out.println(estoque.getRecursosMateriais().getMateriaisEscolares().toString());
                     break;
                 case 3:// buscar material Limpeza
-                    System.out.println(faux.buscaMaterialLimpeza(estoque.getRecursosMateriais()));
+                    System.out.println(estoque.getRecursosMateriais().getMateriaisLimpeza().toString());
                     break;
                 }
                 break;
@@ -208,27 +207,27 @@ public class Main {
                 op = Integer.parseInt(input.nextLine());
                 switch (op) {
                 case 1:// professor
-                    if (!faux.cadastrarProfessor(estoque.getRecursosHumanos(), input))
+                    if (!estoque.cadastrarProfessor(input))
                         System.out.println("Algo foi digitado errado professor nao cadastrado");
                     break;
                 case 2:// instrutor
-                    if (!faux.cadastrarInstrutor(estoque.getRecursosHumanos(), input))
+                    if (!estoque.cadastrarInstrutor(input))
                         System.out.println("Algo foi digitado errado instrutor nao cadastrado ");
                     break;
                 case 3:// alunos
-                    if (!faux.cadastrarAluno(estoque.getRecursosHumanos(), input))
+                    if (!estoque.cadastrarAluno(input))
                         System.out.println("Algo foi digitado errado aluno nao cadastrado");
                     break;
                 case 4:// monitores
-                    if (!faux.cadastrarMonitor(estoque.getRecursosHumanos(), input))
+                    if (!estoque.cadastrarMonitor(input))
                         System.out.println("Algo foi digitado errado monitor nao cadastrado");
                     break;
                 case 5:// cozinheiros
-                    if (!faux.cadastrarCozinheiro(estoque.getRecursosHumanos(), input))
+                    if (!estoque.cadastrarCozinheiro(input))
                         System.out.println("Algo foi digitado errado cozinheiro nao cadastrado");
                     break;
                 case 6:// servente
-                    if (!faux.cadastrarServente(estoque.getRecursosHumanos(), input))
+                    if (!estoque.cadastrarServente(input))
                         System.out.println("Algo foi digitado errado servente nao cadastrado");
                     break;
                 }
@@ -238,27 +237,27 @@ public class Main {
                 op = Integer.parseInt(input.nextLine());
                 switch (op) {
                 case 1:// atualizar professor
-                    if (!faux.atualizarProfessor(estoque.getRecursosHumanos(), input))
+                    if (!estoque.atualizarProfessor(input))
                         System.out.println("Algo foi digitado errado professor nao encontrado");
                     break;
                 case 2:// atualizar instrutor
-                    if (!faux.atualizarInstrutor(estoque.getRecursosHumanos(), input))
+                    if (!estoque.atualizarInstrutor(input))
                         System.out.println("Algo foi digitado errado instrutor nao encontrado ");
                     break;
                 case 3:// atualizar alunos
-                    if (!faux.atualizarAluno(estoque.getRecursosHumanos(), input))
+                    if (!estoque.atualizarAluno(input))
                         System.out.println("Algo foi digitado errado aluno nao encontrado");
                     break;
                 case 4:// atualizar monitores
-                    if (!faux.atualizarMonitor(estoque.getRecursosHumanos(), input))
+                    if (!estoque.atualizarMonitor(input))
                         System.out.println("Algo foi digitado errado monitor nao encontrado");
                     break;
                 case 5:// atualizar cozinheiros
-                    if (!faux.atualizarCozinheiro(estoque.getRecursosHumanos(), input))
+                    if (!estoque.atualizarCozinheiro(input))
                         System.out.println("Algo foi digitado errado cozinheiro nao encontrado");
                     break;
                 case 6:// atualizar servente
-                    if (!faux.atualizarServente(estoque.getRecursosHumanos(), input))
+                    if (!estoque.atualizarServente(input))
                         System.out.println("Algo foi digitado errado servente nao encontrado");
                     break;
                 }
@@ -268,27 +267,27 @@ public class Main {
                 op = Integer.parseInt(input.nextLine());
                 switch (op) {
                 case 1:// remover professor
-                    if (!faux.removerProfessor(estoque.getRecursosHumanos(), input))
+                    if (!estoque.removerProfessor(input))
                         System.out.println("Algo foi digitado errado professor nao removido");
                     break;
                 case 2:// remover instrutor
-                    if (!faux.removerInstrutor(estoque.getRecursosHumanos(), input))
+                    if (!estoque.removerInstrutor(input))
                         System.out.println("Algo foi digitado errado instrutor nao removido ");
                     break;
                 case 3:// remover alunos
-                    if (!faux.removerAluno(estoque.getRecursosHumanos(), input))
+                    if (!estoque.removerAluno(input))
                         System.out.println("Algo foi digitado errado aluno nao removido");
                     break;
                 case 4:// remover monitores
-                    if (!faux.removerMonitor(estoque.getRecursosHumanos(), input))
+                    if (!estoque.removerMonitor(input))
                         System.out.println("Algo foi digitado errado monitor nao removido");
                     break;
                 case 5:// remover cozinheiros
-                    if (!faux.removerCozinheiro(estoque.getRecursosHumanos(), input))
+                    if (!estoque.removerCozinheiro(input))
                         System.out.println("Algo foi digitado errado cozinheiro nao removido");
                     break;
                 case 6:// remover servente
-                    if (!faux.removerServente(estoque.getRecursosHumanos(), input))
+                    if (!estoque.removerServente(input))
                         System.out.println("Algo foi digitado errado servente nao removido");
                     break;
                 }
@@ -303,27 +302,22 @@ public class Main {
                 op = Integer.parseInt(input.nextLine());
                 switch (op) {
                 case 1:// buscar professor
-
-                    faux.buscaProfessores(estoque.getRecursosHumanos());
+                    estoque.getRecursosHumanos().printProfessores();
                     break;
                 case 2:// buscar instrutor
-                    faux.buscaInstrutores(estoque.getRecursosHumanos());
+                    estoque.getRecursosHumanos().printInstrutores();
                     break;
                 case 3:// buscar alunos
-
-                    faux.buscaAlunos(estoque.getRecursosHumanos());
+                    estoque.getRecursosHumanos().printAlunos();
                     break;
                 case 4:// buscar monitores
-
-                    faux.buscaMonitores(estoque.getRecursosHumanos());
+                    estoque.getRecursosHumanos().printMonitores();
                     break;
                 case 5:// buscar cozinheiros
-
-                    faux.buscaCozinheiro(estoque.getRecursosHumanos());
+                    estoque.getRecursosHumanos().printCozinheiros();
                     break;
                 case 6:// buscar servente
-
-                    faux.buscaServente(estoque.getRecursosHumanos());
+                    estoque.getRecursosHumanos().printServentes();
                     break;
                 }
                 break;
@@ -331,43 +325,31 @@ public class Main {
             case 11: // requisicao
                 menu.rh();
                 op = Integer.parseInt(input.nextLine());
-                String rg;
                 switch (op) {
                 case 1:// professor matDidatico
-                    faux.requisicaoMatDidatico("professor", estoque.getRecursosHumanos(),
-                            estoque.getRecursosMateriais(), input);
+                    estoque.requisicaoMatDidatico("professor", input);
                     break;
                 case 2:// aluno
-                    faux.requisicaoMatEscolar("aluno", estoque.getRecursosHumanos(), estoque.getRecursosMateriais(),
-                            input);
+                    estoque.requisicaoMatEscolar("aluno", input);
                     break;
                 case 3:// instrutor
-                    faux.requisicaoMatDidatico("instrutor", estoque.getRecursosHumanos(),
-                            estoque.getRecursosMateriais(), input);
+                    estoque.requisicaoMatDidatico("instrutor", input);
                     break;
                 case 4:// monitores
-                    faux.requisicaoMatDidatico("monitores", estoque.getRecursosHumanos(),
-                            estoque.getRecursosMateriais(), input);
+                    estoque.requisicaoMatDidatico("monitores", input);
                     break;
                 case 5:// cozinheiros
-                    faux.requisicaoMatLimpeza("cozinheiro", estoque.getRecursosHumanos(),
-                            estoque.getRecursosMateriais(), input);
+                    estoque.requisicaoMatLimpeza("cozinheiro", input);
                     break;
                 case 6:// serventes
-                    faux.requisicaoMatLimpeza("servente", estoque.getRecursosHumanos(), estoque.getRecursosMateriais(),
-                            input);
+                    estoque.requisicaoMatLimpeza("servente", input);
                     break;
                 }
                 break;
 
             case 12:// relatorio completo
                 System.out.println("Relacao do estoque e recursos humanos");
-                faux.buscaProfessores(estoque.getRecursosHumanos());
-                faux.buscaInstrutores(estoque.getRecursosHumanos());
-                faux.buscaAlunos(estoque.getRecursosHumanos());
-                faux.buscaMonitores(estoque.getRecursosHumanos());
-                faux.buscaCozinheiro(estoque.getRecursosHumanos());
-                faux.buscaServente(estoque.getRecursosHumanos());
+                estoque.getRecursosHumanos().printRH();
                 break;
 
             }

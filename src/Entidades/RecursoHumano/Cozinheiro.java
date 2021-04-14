@@ -1,19 +1,14 @@
 package Entidades.RecursoHumano;
 
-
 import Entidades.RecursoMaterial.MateriaisLimpeza;
 
 public class Cozinheiro extends Pessoa {
 	private int idCozinheiro;
-	private MateriaisLimpeza matLimpeza ;
-
-	
+	private MateriaisLimpeza matLimpeza;
 
 	public MateriaisLimpeza getMatLimpeza() {
 		return this.matLimpeza;
 	}
-
-	
 
 	public Cozinheiro(int idCozinheiro, String nome, String rg, int idade) {
 		super(nome, rg, idade);
@@ -27,10 +22,16 @@ public class Cozinheiro extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "{" + " idCozinheiro='" + getIdCozinheiro() + "', " + super.toString() + "}";
+		return "{" + " idCozinheiro='" + getIdCozinheiro() + "', " + super.toString() + "recursos="
+				+ getMatLimpeza().toString() + "}";
 	}
 
-	public void requisicaoMatLimpeza(){}
-	public void atualizarMatLimpeza(){}
-	public void removerMatLimpeza(){}
+	public void requisicaoMatLimpeza() {
+	}
+
+	public void atualizarMatLimpeza() {
+	}
+
+	public void removerMatLimpeza() {
+	}
 }

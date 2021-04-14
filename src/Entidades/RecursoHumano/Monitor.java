@@ -4,15 +4,11 @@ import Entidades.RecursoMaterial.MateriaisDidaticos;
 
 public class Monitor extends Pessoa {
     private int idMonitor;
-    private MateriaisDidaticos matDidadico ;
+    private MateriaisDidaticos matDidadico;
 
-    
     public MateriaisDidaticos getMatDidadico() {
         return this.matDidadico;
     }
-
-    
-
 
     public Monitor(int idMonitor, String nome, String rg, int idade) {
         super(nome, rg, idade);
@@ -26,11 +22,17 @@ public class Monitor extends Pessoa {
 
     @Override
     public String toString() {
-        return "{" + " idMonitor='" + getIdMonitor() + "', " + super.toString() + "}";
+        return "{" + " idMonitor='" + getIdMonitor() + "', " + super.toString() + "recursos="
+                + getMatDidadico().toString() + "}";
     }
-    
-    public void requisicaoMatDidatico(){}
-	public void atualizarMatDidatico(){}
-	public void removerMatDidatico(){}
+
+    public void requisicaoMatDidatico() {
+    }
+
+    public void atualizarMatDidatico() {
+    }
+
+    public void removerMatDidatico() {
+    }
 
 }

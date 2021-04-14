@@ -36,31 +36,29 @@ public class RecursosHumanos {
 		this.contIDServente = 0;
 	}
 
-
-	public HashMap<String,Professor> getProfessores() {
+	public HashMap<String, Professor> getProfessores() {
 		return this.professores;
 	}
 
-	public HashMap<String,Aluno> getAlunos() {
+	public HashMap<String, Aluno> getAlunos() {
 		return this.alunos;
 	}
 
-	public HashMap<String,Instrutor> getInstrutores() {
+	public HashMap<String, Instrutor> getInstrutores() {
 		return this.instrutores;
 	}
 
-	public HashMap<String,Monitor> getMonitores() {
+	public HashMap<String, Monitor> getMonitores() {
 		return this.monitores;
 	}
 
-	public HashMap<String,Cozinheiro> getCozinheiros() {
+	public HashMap<String, Cozinheiro> getCozinheiros() {
 		return this.cozinheiros;
 	}
 
-	public HashMap<String,Servente> getServentes() {
+	public HashMap<String, Servente> getServentes() {
 		return this.serventes;
 	}
-
 
 	// Adicionar
 	// As funções retornam true se foi possível adicionar,
@@ -231,7 +229,7 @@ public class RecursosHumanos {
 	}
 
 	// Funções print
-	private void printProfessores() {
+	public void printProfessores() {
 		Collection<Professor> listaProfessores = this.professores.values();
 		System.out.println("Lista de Professores:");
 		for (Professor p : listaProfessores) {
@@ -239,7 +237,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	private void printAlunos() {
+	public void printAlunos() {
 		Collection<Aluno> listaAlunos = this.alunos.values();
 		System.out.println("Lista de Alunos:");
 		for (Aluno a : listaAlunos) {
@@ -247,7 +245,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	private void printInstrutores() {
+	public void printInstrutores() {
 		Collection<Instrutor> listaInstrutores = this.instrutores.values();
 		System.out.println("Lista de Instrutores:");
 		for (Instrutor i : listaInstrutores) {
@@ -255,7 +253,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	private void printMonitores() {
+	public void printMonitores() {
 		Collection<Monitor> listaMonitores = this.monitores.values();
 		System.out.println("Lista de Monitores:");
 		for (Monitor m : listaMonitores) {
@@ -263,7 +261,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	private void printCozinheiros() {
+	public void printCozinheiros() {
 		Collection<Cozinheiro> listaCozinheiros = this.cozinheiros.values();
 		System.out.println("Lista de Cozinheiros:");
 		for (Cozinheiro c : listaCozinheiros) {
@@ -271,7 +269,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	private void printServentes() {
+	public void printServentes() {
 		Collection<Servente> listaServentes = this.serventes.values();
 		System.out.println("Lista de Serventes:");
 		for (Servente s : listaServentes) {

@@ -23,7 +23,8 @@ public class Aluno extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "{" + " idAluno='" + getIdAluno() + "', " + super.toString() + "}";
+		return "{" + " idAluno='" + getIdAluno() + "', " + super.toString() + "recursos=" + getMatEscolar().toString()
+				+ "}";
 	}
 
 	public void requisicaoMatEscolar() {
