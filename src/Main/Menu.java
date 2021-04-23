@@ -5,97 +5,49 @@ public class Menu {
     public Menu() {
     }
 
-    public void geral() {
-        System.out.println("\n======== MENU ========");
-        System.out.println("1 - Cadastrar Recursos Materiais");
-        System.out.println("2 - Atualizar Recursos Materiais");
-        System.out.println("3 - Remover Recursos Materiais");
-        System.out.println("4 - Mostrar Estoque Recursos Materiais");
-        System.out.println("5 - Buscar Recursos Materiais");
-        System.out.println("6 - Cadastrar Recursos Humanos");
-        System.out.println("7 - Atualizar Recursos Humanos");
-        System.out.println("8 - Remover Recursos Humanos");
-        System.out.println("9 - Mostrar Recursos Humanos");
-        System.out.println("10 - Buscar Recursos Humanos");
-        System.out.println("11 - Requisicao de Recursos Materiais");
-        System.out.println("12 - Relatorio que vai ser gerado automaticamente no fim da seman");
-        System.out.println("13 - Sair");
-
+    public void principal() {
+        System.out.println("\n========== MENU ==========");
+        System.out.println("1 - Operacoes com Recursos Humanos");
+        System.out.println("2 - Operacoes com Recursos Materiais");
+        System.out.println("3 - Distribuicao de Recursos");
+        System.out.println("4 - Relatorios");
+        System.out.println("5 - Sair");
     }
 
-    public void cadastroRecursoMaterial() {
-        System.out.println("1 - Cadastrar Material Didatico");
-        System.out.println("2 - Cadastrar Material Escolar");
-        System.out.println("3 - Cadastrar Material Limpeza");
+    public void operacoesRecursos() {
+        System.out.println("\n======== OPERACOES ========");
+        System.out.println("1 - Cadastrar");
+        System.out.println("2 - Atualizar");
+        System.out.println("3 - Buscar");
+        System.out.println("4 - Remover");
+        System.out.println("5 - Voltar");
     }
 
-    public void atualizarRecursoMaterial() {
-        System.out.println("1 - Atualizar Material Didatico");
-        System.out.println("2 - Atualizar Material Escolar");
-        System.out.println("3 - Atualizar Material Limpeza");
+    public void operacoesRM(String operacao) {
+        System.out.println("\n======== " + operacao.toUpperCase() + " ========");
+        System.out.println("1 - " + operacao + " Material Didatico");
+        System.out.println("2 - " + operacao + " Material Escolar");
+        System.out.println("3 - " + operacao + " Material Limpeza");
+        System.out.println("4 - Voltar");
     }
 
-    public void removerRecursoMaterial() {
-        System.out.println("1 - Remover Material Didatico");
-        System.out.println("2 - Remover Material Escolar");
-        System.out.println("3 - Remover Material Limpeza");
+    public void operacoesRH(String operacao) {
+        System.out.println("\n======== " + operacao.toUpperCase() + " ========");
+        System.out.println("1 - " + operacao + " Professor");
+        System.out.println("2 - " + operacao + " Instrutor");
+        System.out.println("3 - " + operacao + " Aluno");
+        System.out.println("4 - " + operacao + " Monitor");
+        System.out.println("5 - " + operacao + " Cozinheiro");
+        System.out.println("6 - " + operacao + " Servente");
+        System.out.println("7 - Voltar");
     }
 
-    public void buscaRecursoMaterial() {
-        System.out.println("1 - Buscar Material Didatico");
-        System.out.println("2 - Buscar Material Escolar");
-        System.out.println("3 - Buscar Material Limpeza");
-    }
-
-    public void buscaRecursoHumanos() {
-        System.out.println("1 - Buscar Professor");
-        System.out.println("2 - Buscar Instrutor");
-        System.out.println("3 - Buscar Aluno");
-        System.out.println("4 - Buscar Monitor");
-        System.out.println("5 - Buscar Cozinheiro");
-        System.out.println("6 - Buscar Servente");
-
-    }
-
-    public void cadastroRecursoHumanoInicial() {
-        System.out.println("Para inicializar o sistema, cadastre recursos humanos");
-        System.out.println("1 - Cadastrar professores");
-        System.out.println("2 - Cadastrar instrutores");
-        System.out.println("3 - Cadastrar alunos");
-        System.out.println("4 - Cadastrar monitores");
-        System.out.println("5 - Cadastrar cozinheiros");
-        System.out.println("6 - Cadastrar serventes");
-        System.out.println("7 - Seguir execucao");
-
-    }
-
-    public void cadastroRecursoHumano() {
-
-        System.out.println("1 - Cadastrar professores");
-        System.out.println("2 - Cadastrar instrutores");
-        System.out.println("3 - Cadastrar alunos");
-        System.out.println("4 - Cadastrar monitores");
-        System.out.println("5 - Cadastrar cozinheiros");
-        System.out.println("6 - Cadastrar serventes");
-
-    }
-
-    public void atulizarRecursoHumano() {
-        System.out.println("1 - Atualizar professores");
-        System.out.println("2 - Atualizar instrutores");
-        System.out.println("3 - Atualizar alunos");
-        System.out.println("4 - Atualizar monitores");
-        System.out.println("5 - Atualizar cozinheiros");
-        System.out.println("6 - Atualizar serventes");
-    }
-
-    public void removerRecursoHumano() {
-        System.out.println("1 - Remover professores");
-        System.out.println("2 - Remover instrutores");
-        System.out.println("3 - Remover alunos");
-        System.out.println("4 - Remover monitores");
-        System.out.println("5 - Remover cozinheiros");
-        System.out.println("6 - Remover serventes");
+    public void relatorios() {
+        System.out.println("\n======== RELATORIOS ========");
+        System.out.println("1 - Recursos Humanos");
+        System.out.println("2 - Recursos Materiais");
+        System.out.println("3 - Geral");
+        System.out.println("4 - Voltar");
     }
 
     public void requisicao() {
@@ -104,13 +56,44 @@ public class Menu {
         System.out.println("3 - Requisicao de Material Limpeza");
     }
 
+    // public void geral() {
+    // System.out.println("\n======== MENU ========");
+    // System.out.println("1 - Cadastrar Recursos Materiais");
+    // System.out.println("2 - Atualizar Recursos Materiais");
+    // System.out.println("3 - Remover Recursos Materiais");
+    // System.out.println("4 - Mostrar Estoque Recursos Materiais");
+    // System.out.println("5 - Buscar Recursos Materiais");
+    // System.out.println("6 - Cadastrar Recursos Humanos");
+    // System.out.println("7 - Atualizar Recursos Humanos");
+    // System.out.println("8 - Remover Recursos Humanos");
+    // System.out.println("9 - Mostrar Recursos Humanos");
+    // System.out.println("10 - Buscar Recursos Humanos");
+    // System.out.println("11 - Requisicao de Recursos Materiais");
+    // System.out.println("12 - Relatorio que vai ser gerado automaticamente no fim
+    // da seman");
+    // System.out.println("13 - Sair");
+
+    // }
+
+    public void cadastroRecursoHumanoInicial() {
+        System.out.println("Para inicializar o sistema, cadastre recursos humanos");
+        System.out.println("1 - Cadastrar Professor");
+        System.out.println("2 - Cadastrar Instrutor");
+        System.out.println("3 - Cadastrar Aluno");
+        System.out.println("4 - Cadastrar Monitor");
+        System.out.println("5 - Cadastrar Cozinheiro");
+        System.out.println("6 - Cadastrar Servente");
+        System.out.println("7 - Seguir execucao");
+
+    }
+
     public void rh() {
-        System.out.println("1 - professores");
-        System.out.println("2 - instrutores");
-        System.out.println("3 - alunos");
-        System.out.println("4 - monitores");
-        System.out.println("5 - cozinheiros");
-        System.out.println("6 - serventes");
+        System.out.println("1 - Professor");
+        System.out.println("2 - Instrutor");
+        System.out.println("3 - Aluno");
+        System.out.println("4 - Monitor");
+        System.out.println("5 - Cozinheiro");
+        System.out.println("6 - Servente");
     }
 
     public void escolhaDeEstoque() {

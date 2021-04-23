@@ -4,36 +4,41 @@ import Entidades.RecursoMaterial.MateriaisEscolares;
 
 public class Aluno extends Pessoa {
 
-	private int idAluno;
+	private int ra;
+	private String curso;
 	private MateriaisEscolares matEscolar;
+
+	public Aluno(String rg, String nome, int ra, String curso) {
+		super(rg, nome);
+		this.ra = ra;
+		this.curso = curso;
+		this.matEscolar = new MateriaisEscolares();
+	}
+
+	public int getRa() {
+		return this.ra;
+	}
+
+	public void setRa(int ra) {
+		this.ra = ra;
+	}
+
+	public String getCurso() {
+		return this.curso;
+	}
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
 
 	public MateriaisEscolares getMatEscolar() {
 		return this.matEscolar;
 	}
 
-	public Aluno(int idAluno, String nome, String rg, int idade) {
-		super(nome, rg, idade);
-		this.idAluno = idAluno;
-		this.matEscolar = new MateriaisEscolares();
-	}
-
-	public int getIdAluno() {
-		return this.idAluno;
-	}
-
 	@Override
 	public String toString() {
-		return "{" + " idAluno='" + getIdAluno() + "', " + super.toString() + "recursos=" + getMatEscolar().toString()
-				+ "}";
-	}
-
-	public void requisicaoMatEscolar() {
-	}
-
-	public void atualizarMatEscolar() {
-	}
-
-	public void removerMatEscolar() {
+		return "{" + super.toString() + ", ra='" + getRa() + "'" + ", curso='" + getCurso() + "'" + ", matEscolar='"
+				+ getMatEscolar().toString() + "'" + "}";
 	}
 
 }

@@ -3,35 +3,31 @@ package Entidades.RecursoHumano;
 import Entidades.RecursoMaterial.MateriaisLimpeza;
 
 public class Servente extends Pessoa {
-	private int idServente;
+	private float salario;
 	private MateriaisLimpeza matLimpeza;
+
+	public Servente(String rg, String nome, float salario) {
+		super(rg, nome);
+		this.salario = salario;
+		this.matLimpeza = new MateriaisLimpeza();
+	}
+
+	public float getSalario() {
+		return this.salario;
+	}
+
+	public void setSalario(float salario) {
+		this.salario = salario;
+	}
 
 	public MateriaisLimpeza getMatLimpeza() {
 		return this.matLimpeza;
 	}
 
-	public Servente(int idServente, String nome, String rg, int idade) {
-		super(nome, rg, idade);
-		this.idServente = idServente;
-		this.matLimpeza = new MateriaisLimpeza();
-	}
-
-	public int getIdServente() {
-		return this.idServente;
-	}
-
 	@Override
 	public String toString() {
-		return "{" + " idServente='" + getIdServente() + "', " + "recursos=" + getMatLimpeza().toString()
-				+ super.toString() + "}";
+		return "{" + super.toString() + ", salario='" + getSalario() + "'" + ", matLimpeza='"
+				+ getMatLimpeza().toString() + "'" + "}";
 	}
 
-	public void requisicaoMatLimpeza() {
-	}
-
-	public void atualizarMatLimpeza() {
-	}
-
-	public void removerMatLimpeza() {
-	}
 }

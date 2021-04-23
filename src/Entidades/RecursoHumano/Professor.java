@@ -3,36 +3,41 @@ package Entidades.RecursoHumano;
 import Entidades.RecursoMaterial.MateriaisDidaticos;
 
 public class Professor extends Pessoa {
-	private int idProfessor;
+	private String graduacao;
+	private float salario;
 	private MateriaisDidaticos matDidatico;
+
+	public Professor(String rg, String nome, String graduacao, float salario) {
+		super(rg, nome);
+		this.graduacao = graduacao;
+		this.salario = salario;
+		this.matDidatico = new MateriaisDidaticos();
+	}
+
+	public String getGraduacao() {
+		return this.graduacao;
+	}
+
+	public void setGraduacao(String graduacao) {
+		this.graduacao = graduacao;
+	}
+
+	public float getSalario() {
+		return this.salario;
+	}
+
+	public void setSalario(float salario) {
+		this.salario = salario;
+	}
 
 	public MateriaisDidaticos getMatDidatico() {
 		return this.matDidatico;
 	}
 
-	public Professor(int idProfessor, String nome, String rg, int idade) {
-		super(nome, rg, idade);
-		this.idProfessor = idProfessor;
-		this.matDidatico = new MateriaisDidaticos();
-	}
-
-	public int getIdProfessor() {
-		return this.idProfessor;
-	}
-
 	@Override
 	public String toString() {
-		return "{" + " idProfessor='" + getIdProfessor() + "', " + super.toString() + "recursos="
-				+ getMatDidatico().toString() + "}";
-	}
-
-	public void requisicaoMatDidatico() {
-	}
-
-	public void atualizarMatDidatico() {
-	}
-
-	public void removerMatDidatico() {
+		return "{" + super.toString() + ", graduacao='" + getGraduacao() + "'" + ", salario='" + getSalario() + "'"
+				+ ", matDidatico='" + getMatDidatico().toString() + "'" + "}";
 	}
 
 }

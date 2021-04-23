@@ -14,13 +14,6 @@ public class RecursosHumanos {
 	private HashMap<String, Cozinheiro> cozinheiros;
 	private HashMap<String, Servente> serventes;
 
-	private int contIDProfessor;
-	private int contIDAluno;
-	private int contIDInstrutor;
-	private int contIDMonitor;
-	private int contIDCozinheiro;
-	private int contIDServente;
-
 	public RecursosHumanos() {
 		this.professores = new HashMap<String, Professor>();
 		this.alunos = new HashMap<String, Aluno>();
@@ -28,12 +21,6 @@ public class RecursosHumanos {
 		this.monitores = new HashMap<String, Monitor>();
 		this.cozinheiros = new HashMap<String, Cozinheiro>();
 		this.serventes = new HashMap<String, Servente>();
-		this.contIDProfessor = 0;
-		this.contIDAluno = 0;
-		this.contIDInstrutor = 0;
-		this.contIDMonitor = 0;
-		this.contIDCozinheiro = 0;
-		this.contIDServente = 0;
 	}
 
 	public HashMap<String, Professor> getProfessores() {
@@ -60,61 +47,134 @@ public class RecursosHumanos {
 		return this.serventes;
 	}
 
+	public int getNumProfessores() {
+		return this.professores.size();
+	}
+
+	public int getNumAlunos() {
+		return this.alunos.size();
+	}
+
+	public int getNumInstrutores() {
+		return this.instrutores.size();
+	}
+
+	public int getNumMonitores() {
+		return this.monitores.size();
+	}
+
+	public int getNumCozinheiros() {
+		return this.cozinheiros.size();
+	}
+
+	public int getNumServentes() {
+		return this.serventes.size();
+	}
+
+	// Getters
+	// Assume que existe pessoa com o rg dado
+
+	public Professor getProfessor(String rg) {
+		return this.professores.get(rg);
+	}
+
+	public Aluno getAluno(String rg) {
+		return this.alunos.get(rg);
+	}
+
+	public Instrutor getInstrutor(String rg) {
+		return this.instrutores.get(rg);
+	}
+
+	public Monitor getMonitor(String rg) {
+		return this.monitores.get(rg);
+	}
+
+	public Cozinheiro getCozinheiro(String rg) {
+		return this.cozinheiros.get(rg);
+	}
+
+	public Servente getServente(String rg) {
+		return this.serventes.get(rg);
+	}
+
+	// Busca
+	// As funções retornam true se existe pessoa com o RG dado,
+	// false caso contrário.
+
+	public boolean buscaProfessor(String rg) {
+		return this.professores.containsKey(rg);
+	}
+
+	public boolean buscaAluno(String rg) {
+		return this.alunos.containsKey(rg);
+	}
+
+	public boolean buscaInstrutor(String rg) {
+		return this.instrutores.containsKey(rg);
+	}
+
+	public boolean buscaMonitor(String rg) {
+		return this.monitores.containsKey(rg);
+	}
+
+	public boolean buscaCozinheiro(String rg) {
+		return this.cozinheiros.containsKey(rg);
+	}
+
+	public boolean buscaServente(String rg) {
+		return this.serventes.containsKey(rg);
+	}
+
 	// Adicionar
 	// As funções retornam true se foi possível adicionar,
 	// false se já existe pessoa com o RG dado.
 
-	public boolean addProfessor(String rg, String nome, int idade) {
-		if (this.professores.containsKey(rg)) {
+	public boolean addProfessor(String rg, String nome, String graduacao, float salario) {
+		if (this.buscaProfessor(rg)) {
 			return false;
 		}
-		int idProfessor = ++this.contIDProfessor;
-		this.professores.put(rg, new Professor(idProfessor, nome, rg, idade));
+		this.professores.put(rg, new Professor(rg, nome, graduacao, salario));
 		return true;
 	}
 
-	public boolean addAluno(String rg, String nome, int idade) {
-		if (this.alunos.containsKey(rg)) {
+	public boolean addAluno(String rg, String nome, int ra, String curso) {
+		if (this.buscaAluno(rg)) {
 			return false;
 		}
-		int idAluno = ++this.contIDAluno;
-		this.alunos.put(rg, new Aluno(idAluno, nome, rg, idade));
+		this.alunos.put(rg, new Aluno(rg, nome, ra, curso));
 		return true;
 	}
 
-	public boolean addInstrutor(String rg, String nome, int idade) {
-		if (this.instrutores.containsKey(rg)) {
+	public boolean addInstrutor(String rg, String nome, String curso) {
+		if (this.buscaInstrutor(rg)) {
 			return false;
 		}
-		int idInstrutor = ++this.contIDInstrutor;
-		this.instrutores.put(rg, new Instrutor(idInstrutor, nome, rg, idade));
+		this.instrutores.put(rg, new Instrutor(rg, nome, curso));
 		return true;
 	}
 
-	public boolean addMonitor(String rg, String nome, int idade) {
-		if (this.monitores.containsKey(rg)) {
+	public boolean addMonitor(String rg, String nome, float salario) {
+		if (this.buscaMonitor(rg)) {
 			return false;
 		}
-		int idMonitor = ++this.contIDMonitor;
-		this.monitores.put(rg, new Monitor(idMonitor, nome, rg, idade));
+		this.monitores.put(rg, new Monitor(rg, nome, salario));
 		return true;
 	}
 
-	public boolean addCozinheiro(String rg, String nome, int idade) {
-		if (this.cozinheiros.containsKey(rg)) {
+	public boolean addCozinheiro(String rg, String nome, float salario) {
+		if (this.buscaCozinheiro(rg)) {
 			return false;
 		}
-		int idCozinheiro = ++this.contIDCozinheiro;
-		this.cozinheiros.put(rg, new Cozinheiro(idCozinheiro, nome, rg, idade));
+		this.cozinheiros.put(rg, new Cozinheiro(rg, nome, salario));
 		return true;
 	}
 
-	public boolean addServente(String rg, String nome, int idade) {
-		if (this.serventes.containsKey(rg)) {
+	public boolean addServente(String rg, String nome, float salario) {
+		if (this.buscaServente(rg)) {
 			return false;
 		}
-		int idServente = ++this.contIDServente;
-		this.serventes.put(rg, new Servente(idServente, nome, rg, idade));
+		this.serventes.put(rg, new Servente(rg, nome, salario));
 		return true;
 	}
 
@@ -122,55 +182,57 @@ public class RecursosHumanos {
 	// As funções retornam true se foi possível alterar,
 	// false se não existe pessoa com o RG dado.
 
-	public boolean alteraProfessor(String rg, String nome, int idade) {
-		if (this.professores.containsKey(rg)) {
-			Professor novoProfessor = new Professor(this.professores.get(rg).getIdProfessor(), nome, rg, idade);
-			this.professores.replace(rg, novoProfessor);
+	public boolean alteraProfessor(String rg, String nome, String graduacao, float salario) {
+		if (this.buscaProfessor(rg)) {
+			this.professores.get(rg).setNome(nome);
+			this.professores.get(rg).setGraduacao(graduacao);
+			this.professores.get(rg).setSalario(salario);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean alteraAluno(String rg, String nome, int idade) {
-		if (this.alunos.containsKey(rg)) {
-			Aluno novoAluno = new Aluno(this.alunos.get(rg).getIdAluno(), nome, rg, idade);
-			this.alunos.replace(rg, novoAluno);
+	public boolean alteraAluno(String rg, String nome, int ra, String curso) {
+		if (this.buscaAluno(rg)) {
+			this.alunos.get(rg).setNome(nome);
+			this.alunos.get(rg).setRa(ra);
+			this.alunos.get(rg).setCurso(curso);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean alteraInstrutor(String rg, String nome, int idade) {
-		if (this.instrutores.containsKey(rg)) {
-			Instrutor novoInstrutor = new Instrutor(this.instrutores.get(rg).getIdInstrutor(), nome, rg, idade);
-			this.instrutores.replace(rg, novoInstrutor);
+	public boolean alteraInstrutor(String rg, String nome, String curso) {
+		if (this.buscaInstrutor(rg)) {
+			this.instrutores.get(rg).setNome(nome);
+			this.instrutores.get(rg).setCurso(curso);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean alteraMonitor(String rg, String nome, int idade) {
-		if (this.monitores.containsKey(rg)) {
-			Monitor novoMonitor = new Monitor(this.monitores.get(rg).getIdMonitor(), nome, rg, idade);
-			this.monitores.replace(rg, novoMonitor);
+	public boolean alteraMonitor(String rg, String nome, float salario) {
+		if (this.buscaMonitor(rg)) {
+			this.monitores.get(rg).setNome(nome);
+			this.monitores.get(rg).setSalario(salario);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean alteraCozinheiro(String rg, String nome, int idade) {
-		if (this.cozinheiros.containsKey(rg)) {
-			Cozinheiro novoCozinheiro = new Cozinheiro(this.cozinheiros.get(rg).getIdCozinheiro(), nome, rg, idade);
-			this.cozinheiros.replace(rg, novoCozinheiro);
+	public boolean alteraCozinheiro(String rg, String nome, float salario) {
+		if (this.buscaCozinheiro(rg)) {
+			this.cozinheiros.get(rg).setNome(nome);
+			this.cozinheiros.get(rg).setSalario(salario);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean alteraServente(String rg, String nome, int idade) {
-		if (this.serventes.containsKey(rg)) {
-			Servente novoServente = new Servente(this.serventes.get(rg).getIdServente(), nome, rg, idade);
-			this.serventes.replace(rg, novoServente);
+	public boolean alteraServente(String rg, String nome, float salario) {
+		if (this.buscaServente(rg)) {
+			this.serventes.get(rg).setNome(nome);
+			this.serventes.get(rg).setSalario(salario);
 			return true;
 		}
 		return false;
@@ -180,48 +242,48 @@ public class RecursosHumanos {
 	// As funções retornam true se foi possível remover,
 	// false se não existe pessoa com o RG dado.
 
-	public boolean removeProfessor(String rg, String nome, int idade) {
-		if (this.professores.containsKey(rg)) {
+	public boolean removeProfessor(String rg) {
+		if (this.buscaProfessor(rg)) {
 			this.professores.remove(rg);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean removeAluno(String rg, String nome, int idade) {
-		if (this.alunos.containsKey(rg)) {
+	public boolean removeAluno(String rg) {
+		if (this.buscaAluno(rg)) {
 			this.alunos.remove(rg);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean removeInstrutor(String rg, String nome, int idade) {
-		if (this.instrutores.containsKey(rg)) {
+	public boolean removeInstrutor(String rg) {
+		if (this.buscaInstrutor(rg)) {
 			this.instrutores.remove(rg);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean removeMonitor(String rg, String nome, int idade) {
-		if (this.monitores.containsKey(rg)) {
+	public boolean removeMonitor(String rg) {
+		if (this.buscaMonitor(rg)) {
 			this.monitores.remove(rg);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean removeCozinheiro(String rg, String nome, int idade) {
-		if (this.cozinheiros.containsKey(rg)) {
+	public boolean removeCozinheiro(String rg) {
+		if (this.buscaCozinheiro(rg)) {
 			this.cozinheiros.remove(rg);
 			return true;
 		}
 		return false;
 	}
 
-	public boolean removeServente(String rg, String nome, int idade) {
-		if (this.serventes.containsKey(rg)) {
+	public boolean removeServente(String rg) {
+		if (this.buscaServente(rg)) {
 			this.serventes.remove(rg);
 			return true;
 		}

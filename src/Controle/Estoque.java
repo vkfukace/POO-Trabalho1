@@ -6,8 +6,12 @@ import Entidades.RecursoHumano.*;
 public class Estoque {
 
 	private RecursosHumanos recursosHumanos;
-
 	private RecursosMateriais recursosMateriais;
+
+	public Estoque() {
+		this.recursosHumanos = new RecursosHumanos();
+		this.recursosMateriais = new RecursosMateriais();
+	}
 
 	public RecursosHumanos getRecursosHumanos() {
 		return this.recursosHumanos;
@@ -17,135 +21,129 @@ public class Estoque {
 		return this.recursosMateriais;
 	}
 
-	public Estoque() {
-		this.recursosHumanos = new RecursosHumanos();
-		this.recursosMateriais = new RecursosMateriais();
-	}
-
-	public String estoqueRecursosMateriais() {
-		return getRecursosMateriais().getMateriaisDidaticos().toString() + "\n"
-				+ getRecursosMateriais().getMateriaisEscolares().toString() + "\n"
-				+ getRecursosMateriais().getMateriaisLimpeza().toString();
-
-	}
-
 	// ########################################################################################################
 	// Funções Cadastro
 
 	public boolean cadastrarProfessor(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		String graduacao;
+		float salario;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("Graduacao: ");
+		graduacao = input.nextLine();
+		System.out.print("Salario: ");
+		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().addProfessor(rg, nome, idade);
+		return this.getRecursosHumanos().addProfessor(rg, nome, graduacao, salario);
 	}
 
 	public boolean cadastrarAluno(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		int ra;
+		String curso;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("RA: ");
+		ra = Integer.parseInt(input.nextLine());
+		System.out.print("Curso: ");
+		curso = input.nextLine();
 
-		return this.getRecursosHumanos().addAluno(rg, nome, idade);
+		return this.getRecursosHumanos().addAluno(rg, nome, ra, curso);
 	}
 
 	public boolean cadastrarInstrutor(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		String curso;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("Curso: ");
+		curso = input.nextLine();
 
-		return this.getRecursosHumanos().addInstrutor(rg, nome, idade);
+		return this.getRecursosHumanos().addInstrutor(rg, nome, curso);
 	}
 
 	public boolean cadastrarMonitor(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		float salario;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("Salario: ");
+		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().addMonitor(rg, nome, idade);
+		return this.getRecursosHumanos().addMonitor(rg, nome, salario);
 	}
 
 	public boolean cadastrarCozinheiro(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		float salario;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("Salario: ");
+		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().addCozinheiro(rg, nome, idade);
+		return this.getRecursosHumanos().addCozinheiro(rg, nome, salario);
 	}
 
 	public boolean cadastrarServente(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		float salario;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("Salario: ");
+		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().addServente(rg, nome, idade);
+		return this.getRecursosHumanos().addServente(rg, nome, salario);
 	}
 
 	public boolean cadastrarMaterialDidatico(Scanner input) {
 
 		String[] listaNomes = { "Quantidade de Livro: ", "Quantidade de Quadro: ", "Quantidade de Giz: ",
 				"Quantidade de Apagador: ", "Quantidade de Pincel: " };
-		int[] listaAux = new int[5];
-		for (int i = 0; i < listaAux.length; i++) {
+		int[] listaQtd = new int[5];
+		for (int i = 0; i < listaQtd.length; i++) {
 			System.out.print(listaNomes[i]);
-			listaAux[i] = Integer.parseInt(input.nextLine());
+			listaQtd[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().AdicionarRecusoMaterialDidatico(listaAux[0], listaAux[1], listaAux[2],
-				listaAux[3], listaAux[4]);
+		return this.getRecursosMateriais().AdicionarRecusoMaterialDidatico(listaQtd[0], listaQtd[1], listaQtd[2],
+				listaQtd[3], listaQtd[4]);
 	}
 
 	public boolean cadastrarMaterialEscolar(Scanner input) {
 
 		String[] listaNomes = { "Quantidade de Lapis: ", "Quantidade de Caderno: ", "Quantidade de Caneta: " };
-		int[] listaAux = new int[3];
-		for (int i = 0; i < listaAux.length; i++) {
+		int[] listaQtd = new int[3];
+		for (int i = 0; i < listaQtd.length; i++) {
 			System.out.print(listaNomes[i]);
-			listaAux[i] = Integer.parseInt(input.nextLine());
+			listaQtd[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().AdicionarRecusoMaterialEscolar(listaAux[0], listaAux[1], listaAux[2]);
+		return this.getRecursosMateriais().AdicionarRecusoMaterialEscolar(listaQtd[0], listaQtd[1], listaQtd[2]);
 
 	}
 
@@ -153,14 +151,14 @@ public class Estoque {
 
 		String[] listaNomes = { "Quantidade de Alvejante: ", "Quantidade de Sabao em po: ",
 				"Quantidade de Agua sanitaria: ", "Quantidade de Sabao barra: " };
-		int[] listaAux = new int[4];
-		for (int i = 0; i < listaAux.length; i++) {
+		int[] listaQtd = new int[4];
+		for (int i = 0; i < listaQtd.length; i++) {
 			System.out.print(listaNomes[i]);
-			listaAux[i] = Integer.parseInt(input.nextLine());
+			listaQtd[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().AdicionarRecusoMaterialLimpeza(listaAux[0], listaAux[1], listaAux[2],
-				listaAux[3]);
+		return this.getRecursosMateriais().AdicionarRecusoMaterialLimpeza(listaQtd[0], listaQtd[1], listaQtd[2],
+				listaQtd[3]);
 
 	}
 
@@ -170,91 +168,97 @@ public class Estoque {
 	public boolean atualizarProfessor(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		String graduacao;
+		float salario;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("Graduacao: ");
+		graduacao = input.nextLine();
+		System.out.print("Salario: ");
+		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().alteraProfessor(rg, nome, idade);
+		return this.getRecursosHumanos().alteraProfessor(rg, nome, graduacao, salario);
 	}
 
 	public boolean atualizarAluno(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		int ra;
+		String curso;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("RA: ");
+		ra = Integer.parseInt(input.nextLine());
+		System.out.print("Curso: ");
+		curso = input.nextLine();
 
-		return this.getRecursosHumanos().alteraAluno(rg, nome, idade);
+		return this.getRecursosHumanos().alteraAluno(rg, nome, ra, curso);
 	}
 
 	public boolean atualizarInstrutor(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		String curso;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("Curso: ");
+		curso = input.nextLine();
 
-		return this.getRecursosHumanos().alteraInstrutor(rg, nome, idade);
+		return this.getRecursosHumanos().alteraInstrutor(rg, nome, curso);
 	}
 
 	public boolean atualizarMonitor(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		float salario;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("Salario: ");
+		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().alteraMonitor(rg, nome, idade);
+		return this.getRecursosHumanos().alteraMonitor(rg, nome, salario);
 	}
 
 	public boolean atualizarCozinheiro(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		float salario;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("Salario: ");
+		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().alteraCozinheiro(rg, nome, idade);
+		return this.getRecursosHumanos().alteraCozinheiro(rg, nome, salario);
 	}
 
 	public boolean atualizarServente(Scanner input) {
 		String rg;
 		String nome;
-		int idade;
+		float salario;
 
-		System.out.print("Rg: ");
+		System.out.print("RG: ");
 		rg = input.nextLine();
 		System.out.print("Nome: ");
 		nome = input.nextLine();
-		System.out.print("Idade: ");
-		idade = Integer.parseInt(input.nextLine());
+		System.out.print("Salario: ");
+		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().alteraServente(rg, nome, idade);
+		return this.getRecursosHumanos().alteraServente(rg, nome, salario);
 	}
 
 	public boolean atualizarMaterialDidatico(Scanner input) {
@@ -299,96 +303,165 @@ public class Estoque {
 	}
 
 	// ########################################################################################################
+	// Funções Buscar
+
+	public boolean buscarProfessor(Scanner input) {
+		String rg;
+
+		System.out.print("Insira o RG: ");
+		rg = input.nextLine();
+
+		if (this.getRecursosHumanos().buscaProfessor(rg)) {
+			System.out.println(this.getRecursosHumanos().getProfessor(rg).toString());
+			return true;
+		} else {
+			System.out.println("Professor nao encontrado");
+			return false;
+		}
+	}
+
+	public boolean buscarAluno(Scanner input) {
+		String rg;
+
+		System.out.print("Insira o RG: ");
+		rg = input.nextLine();
+
+		if (this.getRecursosHumanos().buscaAluno(rg)) {
+			System.out.println(this.getRecursosHumanos().getAluno(rg).toString());
+			return true;
+		} else {
+			System.out.println("Aluno nao encontrado");
+			return false;
+		}
+	}
+
+	public boolean buscarInstrutor(Scanner input) {
+		String rg;
+
+		System.out.print("Insira o RG: ");
+		rg = input.nextLine();
+
+		if (this.getRecursosHumanos().buscaInstrutor(rg)) {
+			System.out.println(this.getRecursosHumanos().getInstrutor(rg).toString());
+			return true;
+		} else {
+			System.out.println("Instrutor nao encontrado");
+			return false;
+		}
+	}
+
+	public boolean buscarMonitor(Scanner input) {
+		String rg;
+
+		System.out.print("Insira o RG: ");
+		rg = input.nextLine();
+
+		if (this.getRecursosHumanos().buscaMonitor(rg)) {
+			System.out.println(this.getRecursosHumanos().getMonitor(rg).toString());
+			return true;
+		} else {
+			System.out.println("Monitor nao encontrado");
+			return false;
+		}
+	}
+
+	public boolean buscarCozinheiro(Scanner input) {
+		String rg;
+
+		System.out.print("Insira o RG: ");
+		rg = input.nextLine();
+
+		if (this.getRecursosHumanos().buscaCozinheiro(rg)) {
+			System.out.println(this.getRecursosHumanos().getCozinheiro(rg).toString());
+			return true;
+		} else {
+			System.out.println("Cozinheiro nao encontrado");
+			return false;
+		}
+	}
+
+	public boolean buscarServente(Scanner input) {
+		String rg;
+
+		System.out.print("Insira o RG: ");
+		rg = input.nextLine();
+
+		if (this.getRecursosHumanos().buscaServente(rg)) {
+			System.out.println(this.getRecursosHumanos().getServente(rg).toString());
+			return true;
+		} else {
+			System.out.println("Servente nao encontrado");
+			return false;
+		}
+	}
+
+	public void buscarMaterialDidatico() {
+		this.getRecursosMateriais().printMatDidatico();
+	}
+
+	public void buscarMaterialEscolar() {
+		this.getRecursosMateriais().printMatEscolar();
+	}
+
+	public void buscarMaterialLimpeza() {
+		this.getRecursosMateriais().printMatLimpeza();
+	}
+
+	// ########################################################################################################
 	// Funções Remover
 
 	public boolean removerProfessor(Scanner input) {
 		String rg;
-		String nome;
-		int idade;
 
-		System.out.println("Rg:");
+		System.out.print("Insira o RG:");
 		rg = input.nextLine();
-		System.out.println("Nome:");
-		nome = input.nextLine();
-		System.out.println("Idade:");
-		idade = Integer.parseInt(input.nextLine());
 
-		return this.getRecursosHumanos().removeProfessor(rg, nome, idade);
+		return this.getRecursosHumanos().removeProfessor(rg);
 	}
 
 	public boolean removerAluno(Scanner input) {
 		String rg;
-		String nome;
-		int idade;
 
-		System.out.println("Rg:");
+		System.out.print("Insira o RG:");
 		rg = input.nextLine();
-		System.out.println("Nome:");
-		nome = input.nextLine();
-		System.out.println("Idade:");
-		idade = Integer.parseInt(input.nextLine());
 
-		return this.getRecursosHumanos().removeAluno(rg, nome, idade);
+		return this.getRecursosHumanos().removeAluno(rg);
 	}
 
 	public boolean removerInstrutor(Scanner input) {
 		String rg;
-		String nome;
-		int idade;
 
-		System.out.println("Rg:");
+		System.out.print("Insira o RG:");
 		rg = input.nextLine();
-		System.out.println("Nome:");
-		nome = input.nextLine();
-		System.out.println("Idade:");
-		idade = Integer.parseInt(input.nextLine());
 
-		return this.getRecursosHumanos().removeInstrutor(rg, nome, idade);
+		return this.getRecursosHumanos().removeInstrutor(rg);
 	}
 
 	public boolean removerMonitor(Scanner input) {
 		String rg;
-		String nome;
-		int idade;
 
-		System.out.println("Rg:");
+		System.out.print("Insira o RG:");
 		rg = input.nextLine();
-		System.out.println("Nome:");
-		nome = input.nextLine();
-		System.out.println("Idade:");
-		idade = Integer.parseInt(input.nextLine());
 
-		return this.getRecursosHumanos().removeMonitor(rg, nome, idade);
+		return this.getRecursosHumanos().removeMonitor(rg);
 	}
 
 	public boolean removerCozinheiro(Scanner input) {
 		String rg;
-		String nome;
-		int idade;
 
-		System.out.println("Rg:");
+		System.out.print("Insira o RG:");
 		rg = input.nextLine();
-		System.out.println("Nome:");
-		nome = input.nextLine();
-		System.out.println("Idade:");
-		idade = Integer.parseInt(input.nextLine());
 
-		return this.getRecursosHumanos().removeCozinheiro(rg, nome, idade);
+		return this.getRecursosHumanos().removeCozinheiro(rg);
 	}
 
 	public boolean removerServente(Scanner input) {
 		String rg;
-		String nome;
-		int idade;
 
-		System.out.println("Rg:");
+		System.out.print("Insira o RG:");
 		rg = input.nextLine();
-		System.out.println("Nome:");
-		nome = input.nextLine();
-		System.out.println("Idade:");
-		idade = Integer.parseInt(input.nextLine());
 
-		return this.getRecursosHumanos().removeServente(rg, nome, idade);
+		return this.getRecursosHumanos().removeServente(rg);
 	}
 
 	public boolean removerMaterialDidatico(Scanner input) {
@@ -688,5 +761,21 @@ public class Estoque {
 			break;
 
 		}
+	}
+
+	// ########################################################################################################
+	// Funções Relatorio
+
+	public void relatorioRH() {
+		this.recursosHumanos.printRH();
+	}
+
+	public void relatorioRM() {
+		this.recursosMateriais.printRM();
+	}
+
+	public void relatorioGeral() {
+		this.recursosMateriais.printRM();
+		this.recursosHumanos.printRH();
 	}
 }

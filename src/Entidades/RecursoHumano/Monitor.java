@@ -3,36 +3,31 @@ package Entidades.RecursoHumano;
 import Entidades.RecursoMaterial.MateriaisDidaticos;
 
 public class Monitor extends Pessoa {
-    private int idMonitor;
+    private float salario;
     private MateriaisDidaticos matDidadico;
+
+    public Monitor(String rg, String nome, float salario) {
+        super(rg, nome);
+        this.salario = salario;
+        matDidadico = new MateriaisDidaticos();
+    }
+
+    public float getSalario() {
+        return this.salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
 
     public MateriaisDidaticos getMatDidadico() {
         return this.matDidadico;
     }
 
-    public Monitor(int idMonitor, String nome, String rg, int idade) {
-        super(nome, rg, idade);
-        this.idMonitor = idMonitor;
-        matDidadico = new MateriaisDidaticos();
-    }
-
-    public int getIdMonitor() {
-        return this.idMonitor;
-    }
-
     @Override
     public String toString() {
-        return "{" + " idMonitor='" + getIdMonitor() + "', " + super.toString() + "recursos="
-                + getMatDidadico().toString() + "}";
-    }
-
-    public void requisicaoMatDidatico() {
-    }
-
-    public void atualizarMatDidatico() {
-    }
-
-    public void removerMatDidatico() {
+        return "{" + super.toString() + ", salario='" + getSalario() + "'" + ", matDidadico='"
+                + getMatDidadico().toString() + "'" + "}";
     }
 
 }
