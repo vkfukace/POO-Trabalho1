@@ -5,7 +5,7 @@ public class Menu {
     public Menu() {
     }
 
-    public void principal() {
+    protected void principal() {
         System.out.println("\n========== MENU ==========");
         System.out.println("1 - Operacoes com Recursos Humanos");
         System.out.println("2 - Operacoes com Recursos Materiais");
@@ -14,7 +14,7 @@ public class Menu {
         System.out.println("0 - Sair");
     }
 
-    public void operacoesRecursos() {
+    protected void operacoesRecursos() {
         System.out.println("\n======== OPERACOES ========");
         System.out.println("1 - Cadastrar");
         System.out.println("2 - Atualizar");
@@ -23,7 +23,7 @@ public class Menu {
         System.out.println("0 - Voltar");
     }
 
-    public void operacoesRM(String operacao) {
+    protected void operacoesRM(String operacao) {
         System.out.println("\n======== " + operacao.toUpperCase() + " ========");
         System.out.println("1 - " + operacao + " Material Didatico");
         System.out.println("2 - " + operacao + " Material Escolar");
@@ -31,7 +31,7 @@ public class Menu {
         System.out.println("0 - Voltar");
     }
 
-    public void operacoesRH(String operacao) {
+    protected void operacoesRH(String operacao) {
         System.out.println("\n======== " + operacao.toUpperCase() + " ========");
         System.out.println("1 - " + operacao + " Professor");
         System.out.println("2 - " + operacao + " Instrutor");
@@ -42,7 +42,7 @@ public class Menu {
         System.out.println("0 - Voltar");
     }
 
-    public void relatorios() {
+    protected void relatorios() {
         System.out.println("\n======== RELATORIOS ========");
         System.out.println("Tipos de relatorio:");
         System.out.println("1 - Recursos Humanos");
@@ -51,7 +51,7 @@ public class Menu {
         System.out.println("0 - Voltar");
     }
 
-    public void requisicao() {
+    protected void requisicao() {
         System.out.println("\n======== REQUISICAO DE RECURSOS ========");
         System.out.println("Requisicao de recursos para:");
         System.out.println("1 - Professor");

@@ -1,11 +1,11 @@
 package Entidades.RecursoMaterial;
 
 public class MateriaisDidaticos {
-    private int livro;
-    private int quadro;
-    private int giz;
-    private int apagador;
-    private int pincel;
+    protected int livro;
+    protected int quadro;
+    protected int giz;
+    protected int apagador;
+    protected int pincel;
 
     public MateriaisDidaticos() {
         this.livro = 0;

@@ -1,10 +1,10 @@
 package Entidades.RecursoMaterial;
 
 public class MateriaisLimpeza {
-    private int alvejante;
-    private int sabaoPo;
-    private int aguaSanitaria;
-    private int sabaoBarra;
+    protected int alvejante;
+    protected int sabaoPo;
+    protected int aguaSanitaria;
+    protected int sabaoBarra;
 
     public MateriaisLimpeza() {
         this.alvejante = 0;

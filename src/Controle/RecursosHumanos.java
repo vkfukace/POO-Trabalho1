@@ -7,12 +7,12 @@ import Entidades.RecursoHumano.*;
 
 public class RecursosHumanos {
 
-	private HashMap<String, Professor> professores;
-	private HashMap<String, Aluno> alunos;
-	private HashMap<String, Instrutor> instrutores;
-	private HashMap<String, Monitor> monitores;
-	private HashMap<String, Cozinheiro> cozinheiros;
-	private HashMap<String, Servente> serventes;
+	protected HashMap<String, Professor> professores;
+	protected HashMap<String, Aluno> alunos;
+	protected HashMap<String, Instrutor> instrutores;
+	protected HashMap<String, Monitor> monitores;
+	protected HashMap<String, Cozinheiro> cozinheiros;
+	protected HashMap<String, Servente> serventes;
 
 	public RecursosHumanos() {
 		this.professores = new HashMap<String, Professor>();
@@ -23,78 +23,78 @@ public class RecursosHumanos {
 		this.serventes = new HashMap<String, Servente>();
 	}
 
-	public HashMap<String, Professor> getProfessores() {
+	protected HashMap<String, Professor> getProfessores() {
 		return this.professores;
 	}
 
-	public HashMap<String, Aluno> getAlunos() {
+	protected HashMap<String, Aluno> getAlunos() {
 		return this.alunos;
 	}
 
-	public HashMap<String, Instrutor> getInstrutores() {
+	protected HashMap<String, Instrutor> getInstrutores() {
 		return this.instrutores;
 	}
 
-	public HashMap<String, Monitor> getMonitores() {
+	protected HashMap<String, Monitor> getMonitores() {
 		return this.monitores;
 	}
 
-	public HashMap<String, Cozinheiro> getCozinheiros() {
+	protected HashMap<String, Cozinheiro> getCozinheiros() {
 		return this.cozinheiros;
 	}
 
-	public HashMap<String, Servente> getServentes() {
+	protected HashMap<String, Servente> getServentes() {
 		return this.serventes;
 	}
 
-	public int getNumProfessores() {
+	protected int getNumProfessores() {
 		return this.professores.size();
 	}
 
-	public int getNumAlunos() {
+	protected int getNumAlunos() {
 		return this.alunos.size();
 	}
 
-	public int getNumInstrutores() {
+	protected int getNumInstrutores() {
 		return this.instrutores.size();
 	}
 
-	public int getNumMonitores() {
+	protected int getNumMonitores() {
 		return this.monitores.size();
 	}
 
-	public int getNumCozinheiros() {
+	protected int getNumCozinheiros() {
 		return this.cozinheiros.size();
 	}
 
-	public int getNumServentes() {
+	protected int getNumServentes() {
 		return this.serventes.size();
 	}
 
 	// Getters
 	// Assume que existe pessoa com o rg dado
 
-	public Professor getProfessor(String rg) {
+	protected Professor getProfessor(String rg) {
 		return this.professores.get(rg);
 	}
 
-	public Aluno getAluno(String rg) {
+	protected Aluno getAluno(String rg) {
 		return this.alunos.get(rg);
 	}
 
-	public Instrutor getInstrutor(String rg) {
+	protected Instrutor getInstrutor(String rg) {
 		return this.instrutores.get(rg);
 	}
 
-	public Monitor getMonitor(String rg) {
+	protected Monitor getMonitor(String rg) {
 		return this.monitores.get(rg);
 	}
 
-	public Cozinheiro getCozinheiro(String rg) {
+	protected Cozinheiro getCozinheiro(String rg) {
 		return this.cozinheiros.get(rg);
 	}
 
-	public Servente getServente(String rg) {
+	protected Servente getServente(String rg) {
 		return this.serventes.get(rg);
 	}
 
@@ -102,27 +102,27 @@ public class RecursosHumanos {
 	// As funções retornam true se existe pessoa com o RG dado,
 	// false caso contrário.
 
-	public boolean buscaProfessor(String rg) {
+	protected boolean buscaProfessor(String rg) {
 		return this.professores.containsKey(rg);
 	}
 
-	public boolean buscaAluno(String rg) {
+	protected boolean buscaAluno(String rg) {
 		return this.alunos.containsKey(rg);
 	}
 
-	public boolean buscaInstrutor(String rg) {
+	protected boolean buscaInstrutor(String rg) {
 		return this.instrutores.containsKey(rg);
 	}
 
-	public boolean buscaMonitor(String rg) {
+	protected boolean buscaMonitor(String rg) {
 		return this.monitores.containsKey(rg);
 	}
 
-	public boolean buscaCozinheiro(String rg) {
+	protected boolean buscaCozinheiro(String rg) {
 		return this.cozinheiros.containsKey(rg);
 	}
 
-	public boolean buscaServente(String rg) {
+	protected boolean buscaServente(String rg) {
 		return this.serventes.containsKey(rg);
 	}
 
@@ -130,7 +130,7 @@ public class RecursosHumanos {
 	// As funções retornam true se foi possível adicionar,
 	// false se já existe pessoa com o RG dado.
 
-	public boolean addProfessor(String rg, String nome, String graduacao, float salario) {
+	protected boolean addProfessor(String rg, String nome, String graduacao, float salario) {
 		if (this.buscaProfessor(rg)) {
 			return false;
 		}
@@ -138,7 +138,7 @@ public class RecursosHumanos {
 		return true;
 	}
 
-	public boolean addAluno(String rg, String nome, int ra, String curso) {
+	protected boolean addAluno(String rg, String nome, int ra, String curso) {
 		if (this.buscaAluno(rg)) {
 			return false;
 		}
@@ -146,7 +146,7 @@ public class RecursosHumanos {
 		return true;
 	}
 
-	public boolean addInstrutor(String rg, String nome, String curso) {
+	protected boolean addInstrutor(String rg, String nome, String curso) {
 		if (this.buscaInstrutor(rg)) {
 			return false;
 		}
@@ -154,7 +154,7 @@ public class RecursosHumanos {
 		return true;
 	}
 
-	public boolean addMonitor(String rg, String nome, float salario) {
+	protected boolean addMonitor(String rg, String nome, float salario) {
 		if (this.buscaMonitor(rg)) {
 			return false;
 		}
@@ -162,7 +162,7 @@ public class RecursosHumanos {
 		return true;
 	}
 
-	public boolean addCozinheiro(String rg, String nome, float salario) {
+	protected boolean addCozinheiro(String rg, String nome, float salario) {
 		if (this.buscaCozinheiro(rg)) {
 			return false;
 		}
@@ -170,7 +170,7 @@ public class RecursosHumanos {
 		return true;
 	}
 
-	public boolean addServente(String rg, String nome, float salario) {
+	protected boolean addServente(String rg, String nome, float salario) {
 		if (this.buscaServente(rg)) {
 			return false;
 		}
@@ -182,7 +182,7 @@ public class RecursosHumanos {
 	// As funções retornam true se foi possível alterar,
 	// false se não existe pessoa com o RG dado.
 
-	public boolean alteraProfessor(String rg, String nome, String graduacao, float salario) {
+	protected boolean alteraProfessor(String rg, String nome, String graduacao, float salario) {
 		if (this.buscaProfessor(rg)) {
 			this.professores.get(rg).setNome(nome);
 			this.professores.get(rg).setGraduacao(graduacao);
@@ -192,7 +192,7 @@ public class RecursosHumanos {
 		return false;
 	}
 
-	public boolean alteraAluno(String rg, String nome, int ra, String curso) {
+	protected boolean alteraAluno(String rg, String nome, int ra, String curso) {
 		if (this.buscaAluno(rg)) {
 			this.alunos.get(rg).setNome(nome);
 			this.alunos.get(rg).setRa(ra);
@@ -202,7 +202,7 @@ public class RecursosHumanos {
 		return false;
 	}
 
-	public boolean alteraInstrutor(String rg, String nome, String curso) {
+	protected boolean alteraInstrutor(String rg, String nome, String curso) {
 		if (this.buscaInstrutor(rg)) {
 			this.instrutores.get(rg).setNome(nome);
 			this.instrutores.get(rg).setCurso(curso);
@@ -211,7 +211,7 @@ public class RecursosHumanos {
 		return false;
 	}
 
-	public boolean alteraMonitor(String rg, String nome, float salario) {
+	protected boolean alteraMonitor(String rg, String nome, float salario) {
 		if (this.buscaMonitor(rg)) {
 			this.monitores.get(rg).setNome(nome);
 			this.monitores.get(rg).setSalario(salario);
@@ -220,7 +220,7 @@ public class RecursosHumanos {
 		return false;
 	}
 
-	public boolean alteraCozinheiro(String rg, String nome, float salario) {
+	protected boolean alteraCozinheiro(String rg, String nome, float salario) {
 		if (this.buscaCozinheiro(rg)) {
 			this.cozinheiros.get(rg).setNome(nome);
 			this.cozinheiros.get(rg).setSalario(salario);
@@ -229,7 +229,7 @@ public class RecursosHumanos {
 		return false;
 	}
 
-	public boolean alteraServente(String rg, String nome, float salario) {
+	protected boolean alteraServente(String rg, String nome, float salario) {
 		if (this.buscaServente(rg)) {
 			this.serventes.get(rg).setNome(nome);
 			this.serventes.get(rg).setSalario(salario);
@@ -242,7 +242,7 @@ public class RecursosHumanos {
 	// As funções retornam true se foi possível remover,
 	// false se não existe pessoa com o RG dado.
 
-	public boolean removeProfessor(String rg) {
+	protected boolean removeProfessor(String rg) {
 		if (this.buscaProfessor(rg)) {
 			this.professores.remove(rg);
 			return true;
@@ -250,7 +250,7 @@ public class RecursosHumanos {
 		return false;
 	}
 
-	public boolean removeAluno(String rg) {
+	protected boolean removeAluno(String rg) {
 		if (this.buscaAluno(rg)) {
 			this.alunos.remove(rg);
 			return true;
@@ -258,7 +258,7 @@ public class RecursosHumanos {
 		return false;
 	}
 
-	public boolean removeInstrutor(String rg) {
+	protected boolean removeInstrutor(String rg) {
 		if (this.buscaInstrutor(rg)) {
 			this.instrutores.remove(rg);
 			return true;
@@ -266,7 +266,7 @@ public class RecursosHumanos {
 		return false;
 	}
 
-	public boolean removeMonitor(String rg) {
+	protected boolean removeMonitor(String rg) {
 		if (this.buscaMonitor(rg)) {
 			this.monitores.remove(rg);
 			return true;
@@ -274,7 +274,7 @@ public class RecursosHumanos {
 		return false;
 	}
 
-	public boolean removeCozinheiro(String rg) {
+	protected boolean removeCozinheiro(String rg) {
 		if (this.buscaCozinheiro(rg)) {
 			this.cozinheiros.remove(rg);
 			return true;
@@ -282,7 +282,7 @@ public class RecursosHumanos {
 		return false;
 	}
 
-	public boolean removeServente(String rg) {
+	protected boolean removeServente(String rg) {
 		if (this.buscaServente(rg)) {
 			this.serventes.remove(rg);
 			return true;
@@ -291,7 +291,7 @@ public class RecursosHumanos {
 	}
 
 	// Funções print
-	public void printProfessores() {
+	protected void printProfessores() {
 		Collection<Professor> listaProfessores = this.professores.values();
 		System.out.println("Lista de Professores:");
 		for (Professor p : listaProfessores) {
@@ -299,7 +299,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	public void printAlunos() {
+	protected void printAlunos() {
 		Collection<Aluno> listaAlunos = this.alunos.values();
 		System.out.println("Lista de Alunos:");
 		for (Aluno a : listaAlunos) {
@@ -307,7 +307,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	public void printInstrutores() {
+	protected void printInstrutores() {
 		Collection<Instrutor> listaInstrutores = this.instrutores.values();
 		System.out.println("Lista de Instrutores:");
 		for (Instrutor i : listaInstrutores) {
@@ -315,7 +315,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	public void printMonitores() {
+	protected void printMonitores() {
 		Collection<Monitor> listaMonitores = this.monitores.values();
 		System.out.println("Lista de Monitores:");
 		for (Monitor m : listaMonitores) {
@@ -323,7 +323,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	public void printCozinheiros() {
+	protected void printCozinheiros() {
 		Collection<Cozinheiro> listaCozinheiros = this.cozinheiros.values();
 		System.out.println("Lista de Cozinheiros:");
 		for (Cozinheiro c : listaCozinheiros) {
@@ -331,7 +331,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	public void printServentes() {
+	protected void printServentes() {
 		Collection<Servente> listaServentes = this.serventes.values();
 		System.out.println("Lista de Serventes:");
 		for (Servente s : listaServentes) {
@@ -339,7 +339,7 @@ public class RecursosHumanos {
 		}
 	}
 
-	public void printRH() {
+	protected void printRH() {
 		System.out.println("Recursos Humanos\n");
 		this.printProfessores();
 		this.printAlunos();
