@@ -26,17 +26,18 @@ public class RecursosMateriais {
 		return this.materiaisEscolares;
 	}
 
+	// Operacoes Material Didatico
+
 	public boolean AdicionarRecusoMaterialDidatico(int livro, int quadro, int giz, int apagador, int pincel) {
 		if (livro >= 0 && quadro >= 0 && giz >= 0 && apagador >= 0 && pincel >= 0) {
-			this.materiaisDidaticos.addLivro(livro);
-			this.materiaisDidaticos.addQuadro(quadro);
-			this.materiaisDidaticos.addGiz(giz);
-			this.materiaisDidaticos.addApagador(apagador);
-			this.materiaisDidaticos.addPincel(pincel);
+			this.materiaisDidaticos.addGeral(livro, quadro, giz, apagador, pincel);
 			return true;
 		} else
 			return false;
+	}
 
+	public boolean AdicionarRecusoMaterialDidatico(int[] listaQtd) {
+		return AdicionarRecusoMaterialDidatico(listaQtd[0], listaQtd[1], listaQtd[2], listaQtd[3], listaQtd[4]);
 	}
 
 	public boolean AtualizarRecusoMaterialDidatico(int livro, int quadro, int giz, int apagador, int pincel) {
@@ -51,34 +52,34 @@ public class RecursosMateriais {
 			return false;
 	}
 
-	public boolean RemoverRecusoMaterialDidatico(int livro, int quadro, int giz, int apagador, int pincel) {
-		boolean c1, c2, c3, c4, c5;
-		if (livro <= 0 && quadro <= 0 && giz <= 0 && apagador <= 0 && pincel <= 0) {
-			return false;
-		} else {
-			c1 = this.materiaisDidaticos.remLivro(livro);
-			c2 = this.materiaisDidaticos.remQuadro(quadro);
-			c3 = this.materiaisDidaticos.remGiz(giz);
-			c4 = this.materiaisDidaticos.remApagador(apagador);
-			c5 = this.materiaisDidaticos.remPincel(pincel);
-			if (c1 && c2 && c3 && c4 && c5)
-				return true;
-			else
-				return false;
-
-		}
-
+	public boolean AtualizarRecusoMaterialDidatico(int[] listaQtd) {
+		return AtualizarRecusoMaterialDidatico(listaQtd[0], listaQtd[1], listaQtd[2], listaQtd[3], listaQtd[4]);
 	}
+
+	public boolean RemoverRecusoMaterialDidatico(int livro, int quadro, int giz, int apagador, int pincel) {
+		if (livro >= 0 && quadro >= 0 && giz >= 0 && apagador >= 0 && pincel >= 0) {
+			return this.materiaisDidaticos.remGeral(livro, quadro, giz, apagador, pincel);
+		} else {
+			return false;
+		}
+	}
+
+	public boolean RemoverRecusoMaterialDidatico(int[] listaQtd) {
+		return RemoverRecusoMaterialDidatico(listaQtd[0], listaQtd[1], listaQtd[2], listaQtd[3], listaQtd[4]);
+	}
+
+	// Operacoes Material Limpeza
 
 	public boolean AdicionarRecusoMaterialLimpeza(int alvejante, int sabaoPo, int aguaSanitaria, int sabaoBarra) {
 		if (alvejante >= 0 && sabaoPo >= 0 && aguaSanitaria >= 0 && sabaoBarra >= 0) {
-			this.materiaisLimpeza.addAlvejante(alvejante);
-			this.materiaisLimpeza.addSabaoPo(sabaoPo);
-			this.materiaisLimpeza.addAguaSanitaria(aguaSanitaria);
-			this.materiaisLimpeza.addSabaoBarra(sabaoBarra);
+			this.materiaisLimpeza.addGeral(alvejante, sabaoPo, aguaSanitaria, sabaoBarra);
 			return true;
 		} else
 			return false;
+	}
+
+	public boolean AdicionarRecusoMaterialLimpeza(int[] listaQtd) {
+		return AdicionarRecusoMaterialLimpeza(listaQtd[0], listaQtd[1], listaQtd[2], listaQtd[3]);
 	}
 
 	public boolean AtualizarRecusoMaterialLimpeza(int alvejante, int sabaoPo, int aguaSanitaria, int sabaoBarra) {
@@ -92,31 +93,34 @@ public class RecursosMateriais {
 			return false;
 	}
 
-	public boolean RemoverRecusoMaterialLimpeza(int alvejante, int sabaoPo, int aguaSanitaria, int sabaoBarra) {
-		boolean c1, c2, c3, c4;
-		if (alvejante <= 0 && sabaoPo <= 0 && aguaSanitaria <= 0 && sabaoBarra <= 0) {
-			return false;
-		} else {
-			c1 = this.materiaisLimpeza.remAlvejante(alvejante);
-			c2 = this.materiaisLimpeza.remSabaoPo(sabaoPo);
-			c3 = this.materiaisLimpeza.remAguaSanitaria(aguaSanitaria);
-			c4 = this.materiaisLimpeza.remSabaoBarra(sabaoBarra);
-			if (c1 && c2 && c3 && c4)
-				return true;
-			else
-				return false;
-		}
-
+	public boolean AtualizarRecusoMaterialLimpeza(int[] listaQtd) {
+		return AtualizarRecusoMaterialLimpeza(listaQtd[0], listaQtd[1], listaQtd[2], listaQtd[3]);
 	}
+
+	public boolean RemoverRecusoMaterialLimpeza(int alvejante, int sabaoPo, int aguaSanitaria, int sabaoBarra) {
+		if (alvejante >= 0 && sabaoPo >= 0 && aguaSanitaria >= 0 && sabaoBarra >= 0) {
+			return this.materiaisLimpeza.remGeral(alvejante, sabaoPo, aguaSanitaria, sabaoBarra);
+		} else {
+			return false;
+		}
+	}
+
+	public boolean RemoverRecusoMaterialLimpeza(int[] listaQtd) {
+		return RemoverRecusoMaterialLimpeza(listaQtd[0], listaQtd[1], listaQtd[2], listaQtd[3]);
+	}
+
+	// Operacoes Material Escolar
 
 	public boolean AdicionarRecusoMaterialEscolar(int lapis, int caderno, int caneta) {
 		if (lapis >= 0 && caderno >= 0 && caneta >= 0) {
-			this.materiaisEscolares.addLapis(lapis);
-			this.materiaisEscolares.addCaderno(caderno);
-			this.materiaisEscolares.addCaneta(caneta);
+			this.materiaisEscolares.addGeral(lapis, caderno, caneta);
 			return true;
 		} else
 			return false;
+	}
+
+	public boolean AdicionarRecusoMaterialEscolar(int[] listaQtd) {
+		return this.AdicionarRecusoMaterialEscolar(listaQtd[0], listaQtd[1], listaQtd[2]);
 	}
 
 	public boolean AtualizarRecusoMaterialEscolar(int lapis, int caderno, int caneta) {
@@ -129,20 +133,23 @@ public class RecursosMateriais {
 			return false;
 	}
 
+	public boolean AtualizarRecusoMaterialEscolar(int[] listaQtd) {
+		return this.AtualizarRecusoMaterialEscolar(listaQtd[0], listaQtd[1], listaQtd[2]);
+	}
+
 	public boolean RemoverRecusoMaterialEscolar(int lapis, int caderno, int caneta) {
-		boolean c1, c2, c3;
-		if (lapis <= 0 && caderno <= 0 && caneta <= 0) {
-			return false;
+		if (lapis >= 0 && caderno >= 0 && caneta >= 0) {
+			return this.materiaisEscolares.remGeral(lapis, caderno, caneta);
 		} else {
-			c1 = this.materiaisEscolares.remLapis(lapis);
-			c2 = this.materiaisEscolares.remCaderno(caderno);
-			c3 = this.materiaisEscolares.remCaneta(caneta);
-			if (c1 && c2 && c3)
-				return true;
-			else
-				return false;
+			return false;
 		}
 	}
+
+	public boolean RemoverRecusoMaterialEscolar(int[] listaQtd) {
+		return this.RemoverRecusoMaterialEscolar(listaQtd[0], listaQtd[1], listaQtd[2]);
+	}
+
+	// Relatorios
 
 	public void printMatDidatico() {
 		System.out.println("Materiais Didaticos:");

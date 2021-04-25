@@ -5,18 +5,6 @@ import java.util.Scanner;
 import Controle.*;
 
 public class Main {
-    /*
-     * Se alguma string entrar com o input (Exclusivo de int, positivo ou negativo)
-     * o programa quebra
-     */
-    /*
-     * Primeiro, vao ser cadastrados(no estoque) recursos materias e os
-     * funcionarios(recursos humanos) Segundo, fazer o preset da quantidade de
-     * recursos materias que vai ser fornecida no mes( ao inciar vai ser o primeiro
-     * dia do mes) Terceiro, a distribuicao é feita a partir de requisicao e a cada
-     * requisao é adicionado o recurso ao funcionario e decrementado no estoque
-     * Quarto, o relatorio geral vai ter uma opcao so pra mostrar que funciona
-     */
 
     public static void main(String[] args) {
 
@@ -44,36 +32,22 @@ public class Main {
                     opcao3 = Integer.parseInt(input.nextLine());
                     switch (opcao3) {
                     case 1: // Professor
-                        if (!estoque.cadastrarProfessor(input)) {
-                            System.out.println("ERRO: Professor com RG dado ja existe!");
-                        }
-                        break;
+                        estoque.cadastrarProfessor(input);
                     case 2: // Instrutor
-                        if (!estoque.cadastrarInstrutor(input)) {
-                            System.out.println("ERRO: Instrutor com RG dado ja existe!");
-                        }
-                        break;
+                        estoque.cadastrarInstrutor(input);
                     case 3: // Aluno
-                        if (!estoque.cadastrarAluno(input)) {
-                            System.out.println("ERRO: Aluno com RG dado ja existe!");
-                        }
+                        estoque.cadastrarAluno(input);
                         break;
                     case 4: // Monitor
-                        if (!estoque.cadastrarMonitor(input)) {
-                            System.out.println("ERRO: Monitor com RG dado ja existe!");
-                        }
+                        estoque.cadastrarMonitor(input);
                         break;
                     case 5: // Cozinheiro
-                        if (!estoque.cadastrarCozinheiro(input)) {
-                            System.out.println("ERRO: Cozinheiro com RG dado ja existe!");
-                        }
+                        estoque.cadastrarCozinheiro(input);
                         break;
                     case 6: // Servente
-                        if (!estoque.cadastrarServente(input)) {
-                            System.out.println("ERRO: Servente com RG dado ja existe!");
-                        }
+                        estoque.cadastrarServente(input);
                         break;
-                    case 7: // Sair
+                    case 0: // Sair
                         break;
                     default:
                         System.out.println("Opcao Invalida!");
@@ -85,36 +59,24 @@ public class Main {
                     opcao3 = Integer.parseInt(input.nextLine());
                     switch (opcao3) {
                     case 1: // Professor
-                        if (!estoque.atualizarProfessor(input)) {
-                            System.out.println("ERRO: Professor com RG dado nao existe!");
-                        }
+                        estoque.atualizarProfessor(input);
                         break;
                     case 2: // Instrutor
-                        if (!estoque.atualizarInstrutor(input)) {
-                            System.out.println("ERRO: Instrutor com RG dado nao existe!");
-                        }
+                        estoque.atualizarInstrutor(input);
                         break;
                     case 3: // Aluno
-                        if (!estoque.atualizarAluno(input)) {
-                            System.out.println("ERRO: Aluno com RG dado nao existe!");
-                        }
+                        estoque.atualizarAluno(input);
                         break;
                     case 4: // Monitor
-                        if (!estoque.atualizarMonitor(input)) {
-                            System.out.println("ERRO: Monitor com RG dado nao existe!");
-                        }
+                        estoque.atualizarMonitor(input);
                         break;
                     case 5: // Cozinheiro
-                        if (!estoque.atualizarCozinheiro(input)) {
-                            System.out.println("ERRO: Cozinheiro com RG dado nao existe!");
-                        }
+                        estoque.atualizarCozinheiro(input);
                         break;
                     case 6: // Servente
-                        if (!estoque.atualizarServente(input)) {
-                            System.out.println("ERRO: Servente com RG dado nao existe!");
-                        }
+                        estoque.atualizarServente(input);
                         break;
-                    case 7: // Sair
+                    case 0: // Sair
                         break;
                     default:
                         System.out.println("Opcao Invalida!");
@@ -143,7 +105,7 @@ public class Main {
                     case 6: // Servente
                         estoque.buscarServente(input);
                         break;
-                    case 7: // Sair
+                    case 0: // Sair
                         break;
                     default:
                         System.out.println("Opcao Invalida!");
@@ -172,13 +134,13 @@ public class Main {
                     case 6: // Servente
                         estoque.removerServente(input);
                         break;
-                    case 7: // Sair
+                    case 0: // Sair
                         break;
                     default:
                         System.out.println("Opcao Invalida!");
                     }
                     break;
-                case 5: // Sair
+                case 0: // Sair
                     break;
                 default:
                     System.out.println("Opcao Invalida!");
@@ -203,7 +165,7 @@ public class Main {
                     case 3: // Material de Limpeza
                         estoque.cadastrarMaterialLimpeza(input);
                         break;
-                    case 4: // Sair
+                    case 0: // Sair
                         break;
                     default:
                         System.out.println("Opcao Invalida!");
@@ -223,7 +185,7 @@ public class Main {
                     case 3: // Material de Limpeza
                         estoque.atualizarMaterialLimpeza(input);
                         break;
-                    case 4: // Sair
+                    case 0: // Sair
                         break;
                     default:
                         System.out.println("Opcao Invalida!");
@@ -243,7 +205,7 @@ public class Main {
                     case 3: // Material de Limpeza
                         estoque.buscarMaterialLimpeza();
                         break;
-                    case 4: // Sair
+                    case 0: // Sair
                         break;
                     default:
                         System.out.println("Opcao Invalida!");
@@ -263,13 +225,13 @@ public class Main {
                     case 3: // Material de Limpeza
                         estoque.buscarMaterialLimpeza();
                         break;
-                    case 4: // Sair
+                    case 0: // Sair
                         break;
                     default:
                         System.out.println("Opcao Invalida!");
                     }
                     break;
-                case 5: // Sair
+                case 0: // Sair
                     break;
                 default:
                     System.out.println("Opcao Invalida!");
@@ -277,21 +239,29 @@ public class Main {
 
                 break;
             case 3: // Distribuicao de recursos
-                menu.cadastroRecursoHumanoInicial();
+                menu.requisicao();
                 System.out.print("Opcao: ");
                 opcao2 = Integer.parseInt(input.nextLine());
                 switch (opcao2) {
-                case 1:// remover material didatico
-                    if (!estoque.removerMaterialDidatico(input))
-                        System.out.println("Quantidade ja  eh 0, material Didatico nao removido");
+                case 1:// professor
+                    estoque.requisicaoMatDidatico("professor", input);
                     break;
-                case 2:// remover material Escolar
-                    if (!estoque.removerMaterialEscolar(input))
-                        System.out.println("Quantidade ja  eh 0, material Escolar nao removido");
+                case 2:// instrutor
+                    estoque.requisicaoMatDidatico("instrutor", input);
                     break;
-                case 3:// remover material Limpeza
-                    if (!estoque.removerMaterialLimpeza(input))
-                        System.out.println("Quantidade ja  eh 0, material de Limpeza nao removido");
+                case 3:// aluno
+                    estoque.requisicaoMatEscolar("aluno", input);
+                    break;
+                case 4:// monitor
+                    estoque.requisicaoMatDidatico("monitor", input);
+                    break;
+                case 5:// cozinheiro
+                    estoque.requisicaoMatLimpeza("cozinheiro", input);
+                    break;
+                case 6:// servente
+                    estoque.requisicaoMatLimpeza("servente", input);
+                    break;
+                case 0:// sair
                     break;
                 default:
                     System.out.println("Opcao Invalida!");
@@ -311,20 +281,20 @@ public class Main {
                 case 3: // Geral
                     estoque.relatorioGeral();
                     break;
-                case 4: // Sair
+                case 0: // Sair
                     break;
                 default:
                     System.out.println("Opcao Invalida!");
                 }
                 break;
-            case 5: // Sair
+            case 0: // Sair
                 break;
 
             default:
                 System.out.println("Opcao Invalida!");
 
             }
-        } while (opcao1 != 5);
+        } while (opcao1 != 0);
 
         // switch (opcao) {
 

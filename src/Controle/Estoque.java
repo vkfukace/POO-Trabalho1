@@ -1,7 +1,6 @@
 package Controle;
 
 import java.util.Scanner;
-import Entidades.RecursoHumano.*;
 
 public class Estoque {
 
@@ -24,7 +23,7 @@ public class Estoque {
 	// ########################################################################################################
 	// Funções Cadastro
 
-	public boolean cadastrarProfessor(Scanner input) {
+	public void cadastrarProfessor(Scanner input) {
 		String rg;
 		String nome;
 		String graduacao;
@@ -39,10 +38,14 @@ public class Estoque {
 		System.out.print("Salario: ");
 		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().addProfessor(rg, nome, graduacao, salario);
+		if (this.getRecursosHumanos().addProfessor(rg, nome, graduacao, salario)) {
+			System.out.println("Professor adicionado com sucesso");
+		} else {
+			System.out.println("ERRO: Professor com RG dado ja existe");
+		}
 	}
 
-	public boolean cadastrarAluno(Scanner input) {
+	public void cadastrarAluno(Scanner input) {
 		String rg;
 		String nome;
 		int ra;
@@ -57,10 +60,14 @@ public class Estoque {
 		System.out.print("Curso: ");
 		curso = input.nextLine();
 
-		return this.getRecursosHumanos().addAluno(rg, nome, ra, curso);
+		if (this.getRecursosHumanos().addAluno(rg, nome, ra, curso)) {
+			System.out.println("Aluno adicionado com sucesso");
+		} else {
+			System.out.println("ERRO: Aluno com RG dado ja existe");
+		}
 	}
 
-	public boolean cadastrarInstrutor(Scanner input) {
+	public void cadastrarInstrutor(Scanner input) {
 		String rg;
 		String nome;
 		String curso;
@@ -72,10 +79,14 @@ public class Estoque {
 		System.out.print("Curso: ");
 		curso = input.nextLine();
 
-		return this.getRecursosHumanos().addInstrutor(rg, nome, curso);
+		if (this.getRecursosHumanos().addInstrutor(rg, nome, curso)) {
+			System.out.println("Instrutor adicionado com sucesso");
+		} else {
+			System.out.println("ERRO: Instrutor com RG dado ja existe");
+		}
 	}
 
-	public boolean cadastrarMonitor(Scanner input) {
+	public void cadastrarMonitor(Scanner input) {
 		String rg;
 		String nome;
 		float salario;
@@ -87,10 +98,14 @@ public class Estoque {
 		System.out.print("Salario: ");
 		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().addMonitor(rg, nome, salario);
+		if (this.getRecursosHumanos().addMonitor(rg, nome, salario)) {
+			System.out.println("Monitor adicionado com sucesso");
+		} else {
+			System.out.println("ERRO: Monitor com RG dado ja existe");
+		}
 	}
 
-	public boolean cadastrarCozinheiro(Scanner input) {
+	public void cadastrarCozinheiro(Scanner input) {
 		String rg;
 		String nome;
 		float salario;
@@ -102,10 +117,14 @@ public class Estoque {
 		System.out.print("Salario: ");
 		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().addCozinheiro(rg, nome, salario);
+		if (this.getRecursosHumanos().addCozinheiro(rg, nome, salario)) {
+			System.out.println("Cozinheiro adicionado com sucesso");
+		} else {
+			System.out.println("ERRO: Cozinheiro com RG dado ja existe");
+		}
 	}
 
-	public boolean cadastrarServente(Scanner input) {
+	public void cadastrarServente(Scanner input) {
 		String rg;
 		String nome;
 		float salario;
@@ -117,10 +136,14 @@ public class Estoque {
 		System.out.print("Salario: ");
 		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().addServente(rg, nome, salario);
+		if (this.getRecursosHumanos().addServente(rg, nome, salario)) {
+			System.out.println("Servente adicionado com sucesso");
+		} else {
+			System.out.println("ERRO: Servente com RG dado ja existe");
+		}
 	}
 
-	public boolean cadastrarMaterialDidatico(Scanner input) {
+	public void cadastrarMaterialDidatico(Scanner input) {
 
 		String[] listaNomes = { "Quantidade de Livro: ", "Quantidade de Quadro: ", "Quantidade de Giz: ",
 				"Quantidade de Apagador: ", "Quantidade de Pincel: " };
@@ -130,12 +153,14 @@ public class Estoque {
 			listaQtd[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().AdicionarRecusoMaterialDidatico(listaQtd[0], listaQtd[1], listaQtd[2],
-				listaQtd[3], listaQtd[4]);
+		if (this.getRecursosMateriais().AdicionarRecusoMaterialDidatico(listaQtd)) {
+			System.out.println("Recursos adicionados com sucesso");
+		} else {
+			System.out.println("ERRO: Entrada invalida");
+		}
 	}
 
-	public boolean cadastrarMaterialEscolar(Scanner input) {
-
+	public void cadastrarMaterialEscolar(Scanner input) {
 		String[] listaNomes = { "Quantidade de Lapis: ", "Quantidade de Caderno: ", "Quantidade de Caneta: " };
 		int[] listaQtd = new int[3];
 		for (int i = 0; i < listaQtd.length; i++) {
@@ -143,11 +168,15 @@ public class Estoque {
 			listaQtd[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().AdicionarRecusoMaterialEscolar(listaQtd[0], listaQtd[1], listaQtd[2]);
+		if (this.getRecursosMateriais().AdicionarRecusoMaterialEscolar(listaQtd)) {
+			System.out.println("Recursos adicionados com sucesso");
+		} else {
+			System.out.println("ERRO: Entrada invalida");
+		}
 
 	}
 
-	public boolean cadastrarMaterialLimpeza(Scanner input) {
+	public void cadastrarMaterialLimpeza(Scanner input) {
 
 		String[] listaNomes = { "Quantidade de Alvejante: ", "Quantidade de Sabao em po: ",
 				"Quantidade de Agua sanitaria: ", "Quantidade de Sabao barra: " };
@@ -157,15 +186,18 @@ public class Estoque {
 			listaQtd[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().AdicionarRecusoMaterialLimpeza(listaQtd[0], listaQtd[1], listaQtd[2],
-				listaQtd[3]);
+		if (this.getRecursosMateriais().AdicionarRecusoMaterialLimpeza(listaQtd)) {
+			System.out.println("Recursos adicionados com sucesso");
+		} else {
+			System.out.println("ERRO: Entrada invalida");
+		}
 
 	}
 
 	// ########################################################################################################
 	// Funções Atualizar
 
-	public boolean atualizarProfessor(Scanner input) {
+	public void atualizarProfessor(Scanner input) {
 		String rg;
 		String nome;
 		String graduacao;
@@ -180,10 +212,14 @@ public class Estoque {
 		System.out.print("Salario: ");
 		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().alteraProfessor(rg, nome, graduacao, salario);
+		if (this.getRecursosHumanos().alteraProfessor(rg, nome, graduacao, salario)) {
+			System.out.println("Professor alterado com sucesso");
+		} else {
+			System.out.println("ERRO: Professor com RG dado nao existe");
+		}
 	}
 
-	public boolean atualizarAluno(Scanner input) {
+	public void atualizarAluno(Scanner input) {
 		String rg;
 		String nome;
 		int ra;
@@ -198,10 +234,14 @@ public class Estoque {
 		System.out.print("Curso: ");
 		curso = input.nextLine();
 
-		return this.getRecursosHumanos().alteraAluno(rg, nome, ra, curso);
+		if (this.getRecursosHumanos().alteraAluno(rg, nome, ra, curso)) {
+			System.out.println("Aluno alterado com sucesso");
+		} else {
+			System.out.println("ERRO: Aluno com RG dado nao existe");
+		}
 	}
 
-	public boolean atualizarInstrutor(Scanner input) {
+	public void atualizarInstrutor(Scanner input) {
 		String rg;
 		String nome;
 		String curso;
@@ -213,10 +253,14 @@ public class Estoque {
 		System.out.print("Curso: ");
 		curso = input.nextLine();
 
-		return this.getRecursosHumanos().alteraInstrutor(rg, nome, curso);
+		if (this.getRecursosHumanos().alteraInstrutor(rg, nome, curso)) {
+			System.out.println("Instrutor alterado com sucesso");
+		} else {
+			System.out.println("ERRO: Instrutor com RG dado nao existe");
+		}
 	}
 
-	public boolean atualizarMonitor(Scanner input) {
+	public void atualizarMonitor(Scanner input) {
 		String rg;
 		String nome;
 		float salario;
@@ -228,10 +272,14 @@ public class Estoque {
 		System.out.print("Salario: ");
 		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().alteraMonitor(rg, nome, salario);
+		if (this.getRecursosHumanos().alteraMonitor(rg, nome, salario)) {
+			System.out.println("Monitor alterado com sucesso");
+		} else {
+			System.out.println("ERRO: Monitor com RG dado nao existe");
+		}
 	}
 
-	public boolean atualizarCozinheiro(Scanner input) {
+	public void atualizarCozinheiro(Scanner input) {
 		String rg;
 		String nome;
 		float salario;
@@ -243,10 +291,14 @@ public class Estoque {
 		System.out.print("Salario: ");
 		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().alteraCozinheiro(rg, nome, salario);
+		if (this.getRecursosHumanos().alteraCozinheiro(rg, nome, salario)) {
+			System.out.println("Cozinheiro alterado com sucesso");
+		} else {
+			System.out.println("ERRO: Cozinheiro com RG dado nao existe");
+		}
 	}
 
-	public boolean atualizarServente(Scanner input) {
+	public void atualizarServente(Scanner input) {
 		String rg;
 		String nome;
 		float salario;
@@ -258,10 +310,14 @@ public class Estoque {
 		System.out.print("Salario: ");
 		salario = Float.parseFloat(input.nextLine());
 
-		return this.getRecursosHumanos().alteraServente(rg, nome, salario);
+		if (this.getRecursosHumanos().alteraServente(rg, nome, salario)) {
+			System.out.println("Servente alterado com sucesso");
+		} else {
+			System.out.println("ERRO: Servente com RG dado nao existe");
+		}
 	}
 
-	public boolean atualizarMaterialDidatico(Scanner input) {
+	public void atualizarMaterialDidatico(Scanner input) {
 
 		String[] listaNomes = { "Quantidade de Livro: ", "Quantidade de Quadro: ", "Quantidade de Giz: ",
 				"Quantidade de Apagador: ", "Quantidade de Pincel: " };
@@ -271,11 +327,14 @@ public class Estoque {
 			listaAux[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().AtualizarRecusoMaterialDidatico(listaAux[0], listaAux[1], listaAux[2],
-				listaAux[3], listaAux[4]);
+		if (this.getRecursosMateriais().AtualizarRecusoMaterialDidatico(listaAux)) {
+			System.out.println("Recursos alterados com sucesso");
+		} else {
+			System.out.println("ERRO: Entrada invalida");
+		}
 	}
 
-	public boolean atualizarMaterialEscolar(Scanner input) {
+	public void atualizarMaterialEscolar(Scanner input) {
 
 		String[] listaNomes = { "Quantidade de Lapis: ", "Quantidade de Caderno: ", "Quantidade de Caneta: " };
 		int[] listaAux = new int[3];
@@ -284,11 +343,15 @@ public class Estoque {
 			listaAux[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().AtualizarRecusoMaterialEscolar(listaAux[0], listaAux[1], listaAux[2]);
+		if (this.getRecursosMateriais().AtualizarRecusoMaterialEscolar(listaAux)) {
+			System.out.println("Recursos alterados com sucesso");
+		} else {
+			System.out.println("ERRO: Entrada invalida");
+		}
 
 	}
 
-	public boolean atualizarMaterialLimpeza(Scanner input) {
+	public void atualizarMaterialLimpeza(Scanner input) {
 		String[] listaNomes = { "Quantidade de Alvejante: ", "Quantidade de Sabao em po: ",
 				"Quantidade de Agua sanitaria: ", "Quantidade de Sabao barra: " };
 		int[] listaAux = new int[4];
@@ -297,15 +360,18 @@ public class Estoque {
 			listaAux[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().AtualizarRecusoMaterialLimpeza(listaAux[0], listaAux[1], listaAux[2],
-				listaAux[3]);
+		if (this.getRecursosMateriais().AtualizarRecusoMaterialLimpeza(listaAux)) {
+			System.out.println("Recursos alterados com sucesso");
+		} else {
+			System.out.println("ERRO: Entrada invalida");
+		}
 
 	}
 
 	// ########################################################################################################
 	// Funções Buscar
 
-	public boolean buscarProfessor(Scanner input) {
+	public void buscarProfessor(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG: ");
@@ -313,14 +379,12 @@ public class Estoque {
 
 		if (this.getRecursosHumanos().buscaProfessor(rg)) {
 			System.out.println(this.getRecursosHumanos().getProfessor(rg).toString());
-			return true;
 		} else {
 			System.out.println("Professor nao encontrado");
-			return false;
 		}
 	}
 
-	public boolean buscarAluno(Scanner input) {
+	public void buscarAluno(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG: ");
@@ -328,14 +392,12 @@ public class Estoque {
 
 		if (this.getRecursosHumanos().buscaAluno(rg)) {
 			System.out.println(this.getRecursosHumanos().getAluno(rg).toString());
-			return true;
 		} else {
 			System.out.println("Aluno nao encontrado");
-			return false;
 		}
 	}
 
-	public boolean buscarInstrutor(Scanner input) {
+	public void buscarInstrutor(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG: ");
@@ -343,14 +405,12 @@ public class Estoque {
 
 		if (this.getRecursosHumanos().buscaInstrutor(rg)) {
 			System.out.println(this.getRecursosHumanos().getInstrutor(rg).toString());
-			return true;
 		} else {
 			System.out.println("Instrutor nao encontrado");
-			return false;
 		}
 	}
 
-	public boolean buscarMonitor(Scanner input) {
+	public void buscarMonitor(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG: ");
@@ -358,14 +418,12 @@ public class Estoque {
 
 		if (this.getRecursosHumanos().buscaMonitor(rg)) {
 			System.out.println(this.getRecursosHumanos().getMonitor(rg).toString());
-			return true;
 		} else {
 			System.out.println("Monitor nao encontrado");
-			return false;
 		}
 	}
 
-	public boolean buscarCozinheiro(Scanner input) {
+	public void buscarCozinheiro(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG: ");
@@ -373,14 +431,12 @@ public class Estoque {
 
 		if (this.getRecursosHumanos().buscaCozinheiro(rg)) {
 			System.out.println(this.getRecursosHumanos().getCozinheiro(rg).toString());
-			return true;
 		} else {
 			System.out.println("Cozinheiro nao encontrado");
-			return false;
 		}
 	}
 
-	public boolean buscarServente(Scanner input) {
+	public void buscarServente(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG: ");
@@ -388,10 +444,8 @@ public class Estoque {
 
 		if (this.getRecursosHumanos().buscaServente(rg)) {
 			System.out.println(this.getRecursosHumanos().getServente(rg).toString());
-			return true;
 		} else {
 			System.out.println("Servente nao encontrado");
-			return false;
 		}
 	}
 
@@ -410,353 +464,277 @@ public class Estoque {
 	// ########################################################################################################
 	// Funções Remover
 
-	public boolean removerProfessor(Scanner input) {
+	public void removerProfessor(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG:");
 		rg = input.nextLine();
 
-		return this.getRecursosHumanos().removeProfessor(rg);
+		if (this.getRecursosHumanos().removeProfessor(rg)) {
+			System.out.println("Professor removido com sucesso");
+		} else {
+			System.out.println("ERRO: Professor com RG dado nao existe");
+		}
 	}
 
-	public boolean removerAluno(Scanner input) {
+	public void removerAluno(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG:");
 		rg = input.nextLine();
 
-		return this.getRecursosHumanos().removeAluno(rg);
+		if (this.getRecursosHumanos().removeAluno(rg)) {
+			System.out.println("Aluno removido com sucesso");
+		} else {
+			System.out.println("ERRO: Aluno com RG dado nao existe");
+		}
 	}
 
-	public boolean removerInstrutor(Scanner input) {
+	public void removerInstrutor(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG:");
 		rg = input.nextLine();
 
-		return this.getRecursosHumanos().removeInstrutor(rg);
+		if (this.getRecursosHumanos().removeInstrutor(rg)) {
+			System.out.println("Instrutor removido com sucesso");
+		} else {
+			System.out.println("ERRO: Instrutor com RG dado nao existe");
+		}
 	}
 
-	public boolean removerMonitor(Scanner input) {
+	public void removerMonitor(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG:");
 		rg = input.nextLine();
 
-		return this.getRecursosHumanos().removeMonitor(rg);
+		if (this.getRecursosHumanos().removeMonitor(rg)) {
+			System.out.println("Monitor removido com sucesso");
+		} else {
+			System.out.println("ERRO: Monitor com RG dado nao existe");
+		}
 	}
 
-	public boolean removerCozinheiro(Scanner input) {
+	public void removerCozinheiro(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG:");
 		rg = input.nextLine();
 
-		return this.getRecursosHumanos().removeCozinheiro(rg);
+		if (this.getRecursosHumanos().removeCozinheiro(rg)) {
+			System.out.println("Cozinheiro removido com sucesso");
+		} else {
+			System.out.println("ERRO: Cozinheiro com RG dado nao existe");
+		}
 	}
 
-	public boolean removerServente(Scanner input) {
+	public void removerServente(Scanner input) {
 		String rg;
 
 		System.out.print("Insira o RG:");
 		rg = input.nextLine();
 
-		return this.getRecursosHumanos().removeServente(rg);
+		if (this.getRecursosHumanos().removeServente(rg)) {
+			System.out.println("Servente removido com sucesso");
+		} else {
+			System.out.println("ERRO: Servente com RG dado nao existe");
+		}
 	}
 
-	public boolean removerMaterialDidatico(Scanner input) {
+	public void removerMaterialDidatico(Scanner input) {
 		String[] listaNomes = { "Quantidade de Livro: ", "Quantidade de Quadro: ", "Quantidade de Giz: ",
 				"Quantidade de Apagador: ", "Quantidade de Pincel: " };
 		int[] listaAux = new int[5];
 		for (int i = 0; i < listaAux.length; i++) {
-			System.out.println(listaNomes[i]);
+			System.out.print(listaNomes[i]);
 			listaAux[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().RemoverRecusoMaterialDidatico(listaAux[0], listaAux[1], listaAux[2],
-				listaAux[3], listaAux[4]);
+		if (this.getRecursosMateriais().RemoverRecusoMaterialDidatico(listaAux)) {
+			System.out.println("Recursos removidos com sucesso");
+		} else {
+			System.out.println("ERRO: Recursos insuficientes ou entrada invalida");
+		}
 	}
 
-	public boolean removerMaterialEscolar(Scanner input) {
+	public void removerMaterialEscolar(Scanner input) {
 
 		String[] listaNomes = { "Quantidade de Lapis: ", "Quantidade de Caderno: ", "Quantidade de Caneta: " };
 		int[] listaAux = new int[3];
 		for (int i = 0; i < listaAux.length; i++) {
-			System.out.println(listaNomes[i]);
+			System.out.print(listaNomes[i]);
 			listaAux[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().RemoverRecusoMaterialEscolar(listaAux[0], listaAux[1], listaAux[2]);
+		if (this.getRecursosMateriais().RemoverRecusoMaterialEscolar(listaAux)) {
+			System.out.println("Recursos removidos com sucesso");
+		} else {
+			System.out.println("ERRO: Recursos insuficientes ou entrada invalida");
+		}
 
 	}
 
-	public boolean removerMaterialLimpeza(Scanner input) {
+	public void removerMaterialLimpeza(Scanner input) {
 
 		String[] listaNomes = { "Quantidade de Alvejante: ", "Quantidade de Sabao em po: ",
 				"Quantidade de Agua sanitaria: ", "Quantidade de Sabao barra: " };
 		int[] listaAux = new int[4];
 		for (int i = 0; i < listaAux.length; i++) {
-			System.out.println(listaNomes[i]);
+			System.out.print(listaNomes[i]);
 			listaAux[i] = Integer.parseInt(input.nextLine());
 		}
 
-		return this.getRecursosMateriais().RemoverRecusoMaterialLimpeza(listaAux[0], listaAux[1], listaAux[2],
-				listaAux[3]);
+		if (this.getRecursosMateriais().RemoverRecusoMaterialLimpeza(listaAux)) {
+			System.out.println("Recursos removidos com sucesso");
+		} else {
+			System.out.println("ERRO: Recursos insuficientes ou entrada invalida");
+		}
 
 	}
 
 	// ########################################################################################################
 	// Funções Requisicao
 
-	public void requisicaoMatDidatico(String rh, Scanner input) {
-		System.out.println("Rg da pessoa a receber a requisicao: ");
-		String Rg = input.nextLine();
+	public void requisicaoMatDidatico(String tipoRH, Scanner input) {
+		String[] listaMateriais = { "Livro", "Quadro", "Giz", "Apagador", "Pincel" };
+		int[] listaQtd = new int[listaMateriais.length];
 
-		String[] listaNomes = { "Quantidade de Livro: ", "Quantidade de Quadro: ", "Quantidade de Giz: ",
-				"Quantidade de Apagador: ", "Quantidade de Pincel: " };
-		int[] listaAux = new int[5];
-		for (int i = 0; i < listaAux.length; i++) {
-			System.out.println(listaNomes[i]);
-			listaAux[i] = Integer.parseInt(input.nextLine());
-		}
+		System.out.print("RG da pessoa a receber a requisicao: ");
+		String rg = input.nextLine();
 
-		switch (rh) {
+		switch (tipoRH) {
 		case "professor":
-			Professor profaux = this.getRecursosHumanos().getProfessores().get(Rg);
-			if (profaux != null) {
+			if (this.getRecursosHumanos().getProfessores().get(rg) != null) {
+				for (int i = 0; i < listaMateriais.length; i++) {
+					System.out.print("Quantidade de " + listaMateriais[i] + ": ");
+					listaQtd[i] = Integer.parseInt(input.nextLine());
+				}
 
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getLivro() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remLivro(listaAux[0]);
-					profaux.getMatDidatico().addLivro(listaAux[0]);
-					System.out.println("Requisao concluida");
+				if (this.recursosMateriais.getMateriaisDidaticos().isSuficiente(listaQtd)) {
+					this.getRecursosHumanos().getProfessores().get(rg).getMatDidatico().addGeral(listaQtd);
+					this.getRecursosMateriais().getMateriaisDidaticos().remGeral(listaQtd);
 				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
+					System.out.println("ERRO: Quantidade de materiais em estoque e insuficiente");
+					System.out.println("A requisicao nao foi processada");
 				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getQuadro() >= listaAux[1]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remQuadro(listaAux[1]);
-					profaux.getMatDidatico().addQuadro(listaAux[1]);
-					System.out.println("Requisao concluida");
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getGiz() >= listaAux[2]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remGiz(listaAux[2]);
-					profaux.getMatDidatico().addGiz(listaAux[2]);
-					System.out.println("Requisao concluida");
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getApagador() >= listaAux[3]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remApagador(listaAux[3]);
-					profaux.getMatDidatico().addApagador(listaAux[3]);
-					System.out.println("Requisao concluida");
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getPincel() >= listaAux[4]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remPincel(listaAux[4]);
-					profaux.getMatDidatico().addPincel(listaAux[4]);
-					System.out.println("Requisao concluida");
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
+			} else {
+				System.out.println("ERRO: Professor nao encontrado");
 			}
 			break;
 
 		case "instrutor":
-			Instrutor instaux = this.getRecursosHumanos().getInstrutores().get(Rg);
-			if (instaux != null) {
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getApagador() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remApagador(listaAux[0]);
-					instaux.getMatDidadico().addApagador(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getGiz() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remGiz(listaAux[0]);
-					instaux.getMatDidadico().addGiz(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getLivro() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remLivro(listaAux[0]);
-					instaux.getMatDidadico().addLivro(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getPincel() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remPincel(listaAux[0]);
-					instaux.getMatDidadico().addPincel(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getQuadro() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remQuadro(listaAux[0]);
-					instaux.getMatDidadico().addQuadro(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
+			if (this.getRecursosHumanos().getInstrutores().get(rg) != null) {
+				for (int i = 0; i < listaMateriais.length; i++) {
+					System.out.print("Quantidade de " + listaMateriais[i] + ": ");
+					listaQtd[i] = Integer.parseInt(input.nextLine());
 				}
 
+				if (this.recursosMateriais.getMateriaisDidaticos().isSuficiente(listaQtd)) {
+					this.getRecursosHumanos().getInstrutores().get(rg).getMatDidadico().addGeral(listaQtd);
+					this.getRecursosMateriais().getMateriaisDidaticos().remGeral(listaQtd);
+				} else {
+					System.out.println("ERRO: Quantidade de materiais em estoque e insuficiente");
+					System.out.println("A requisicao nao foi processada");
+				}
+			} else {
+				System.out.println("ERRO: Instrutor nao encontrado");
 			}
 			break;
 
 		case "monitor":
-			Instrutor moniaux = this.getRecursosHumanos().getInstrutores().get(Rg);
-			if (moniaux != null) {
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getApagador() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remApagador(listaAux[0]);
-					moniaux.getMatDidadico().addApagador(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getGiz() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remGiz(listaAux[0]);
-					moniaux.getMatDidadico().addGiz(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getLivro() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remLivro(listaAux[0]);
-					moniaux.getMatDidadico().addLivro(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getPincel() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remPincel(listaAux[0]);
-					moniaux.getMatDidadico().addPincel(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisDidaticos().getQuadro() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisDidaticos().remQuadro(listaAux[0]);
-					moniaux.getMatDidadico().addQuadro(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
+			if (this.getRecursosHumanos().getMonitores().get(rg) != null) {
+				for (int i = 0; i < listaMateriais.length; i++) {
+					System.out.print("Quantidade de " + listaMateriais[i] + ": ");
+					listaQtd[i] = Integer.parseInt(input.nextLine());
 				}
 
+				if (this.recursosMateriais.getMateriaisDidaticos().isSuficiente(listaQtd)) {
+					this.getRecursosHumanos().getMonitores().get(rg).getMatDidadico().addGeral(listaQtd);
+					this.getRecursosMateriais().getMateriaisDidaticos().remGeral(listaQtd);
+				} else {
+					System.out.println("ERRO: Quantidade de materiais em estoque e insuficiente");
+					System.out.println("A requisicao nao foi processada");
+				}
+			} else {
+				System.out.println("ERRO: Monitor nao encontrado");
 			}
 			break;
 		}
 	}
 
-	public void requisicaoMatEscolar(String rh, Scanner input) {
-		System.out.println("Rg da pessoa a receber a requisicao: ");
-		String Rg = input.nextLine();
+	public void requisicaoMatEscolar(String tipoRH, Scanner input) {
+		String[] listaMateriais = { "Lapis", "Caderno", "Caneta" };
+		int[] listaQtd = new int[listaMateriais.length];
 
-		String[] listaNomes = { "Quantidade de Lapis: ", "Quantidade de Caderno: ", "Quantidade de Caneta: " };
-		int[] listaAux = new int[3];
-		for (int i = 0; i < listaAux.length; i++) {
-			System.out.println(listaNomes[i]);
-			listaAux[i] = Integer.parseInt(input.nextLine());
-		}
+		System.out.print("RG da pessoa a receber a requisicao: ");
+		String rg = input.nextLine();
 
-		switch (rh) {
+		switch (tipoRH) {
 		case "aluno":
-			Aluno aluaux = this.getRecursosHumanos().getAlunos().get(Rg);
-			if (aluaux != null) {
+			if (this.getRecursosHumanos().getAlunos().get(rg) != null) {
+				for (int i = 0; i < listaMateriais.length; i++) {
+					System.out.print("Quantidade de " + listaMateriais[i] + ": ");
+					listaQtd[i] = Integer.parseInt(input.nextLine());
+				}
 
-				if (this.getRecursosMateriais().getMateriaisEscolares().getLapis() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisEscolares().remLapis(listaAux[0]);
-					aluaux.getMatEscolar().addLapis(listaAux[0]);
-					System.out.println("Requisao concluida");
+				if (this.recursosMateriais.getMateriaisEscolares().isSuficiente(listaQtd)) {
+					this.getRecursosHumanos().getAlunos().get(rg).getMatEscolar().addGeral(listaQtd);
+					this.getRecursosMateriais().getMateriaisEscolares().remGeral(listaQtd);
 				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
+					System.out.println("ERRO: Quantidade de materiais em estoque e insuficiente");
+					System.out.println("A requisicao nao foi processada");
 				}
-				if (this.getRecursosMateriais().getMateriaisEscolares().getCaderno() >= listaAux[1]) {
-					this.getRecursosMateriais().getMateriaisEscolares().remCaderno(listaAux[1]);
-					aluaux.getMatEscolar().addCaderno(listaAux[1]);
-					System.out.println("Requisao concluida");
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisEscolares().getCaneta() >= listaAux[2]) {
-					this.getRecursosMateriais().getMateriaisEscolares().remCaneta(listaAux[2]);
-					aluaux.getMatEscolar().addCaneta(listaAux[2]);
-					System.out.println("Requisao concluida");
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
+			} else {
+				System.out.println("ERRO: Aluno nao encontrado");
 			}
 			break;
 
 		}
 	}
 
-	public void requisicaoMatLimpeza(String rh, Scanner input) {
-		System.out.println("Rg da pessoa a receber a requisicao: ");
-		String Rg = input.nextLine();
+	public void requisicaoMatLimpeza(String tipoRH, Scanner input) {
+		String[] listaMateriais = { "Alvejante", "Sabao em Po", "Agua Sanitaria", "Sabao em Barra" };
+		int[] listaQtd = new int[listaMateriais.length];
 
-		String[] listaNomes = { "Quantidade de Alvejante: ", "Quantidade de Sabao em po: ",
-				"Quantidade de Agua sanitaria: ", "Quantidade de Sabao barra: " };
-		int[] listaAux = new int[4];
-		for (int i = 0; i < listaAux.length; i++) {
-			System.out.println(listaNomes[i]);
-			listaAux[i] = Integer.parseInt(input.nextLine());
-		}
+		System.out.print("RG da pessoa a receber a requisicao: ");
+		String rg = input.nextLine();
 
-		switch (rh) {
+		switch (tipoRH) {
 		case "servente":
-			Servente servaux = this.getRecursosHumanos().getServentes().get(Rg);
-			if (servaux != null) {
+			if (this.getRecursosHumanos().getServentes().get(rg) != null) {
+				for (int i = 0; i < listaMateriais.length; i++) {
+					System.out.print("Quantidade de " + listaMateriais[i] + ": ");
+					listaQtd[i] = Integer.parseInt(input.nextLine());
+				}
 
-				if (this.getRecursosMateriais().getMateriaisLimpeza().getAlvejante() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisLimpeza().remAlvejante(listaAux[0]);
-					servaux.getMatLimpeza().addAlvejante(listaAux[0]);
-					System.out.println("Requisao concluida");
+				if (this.recursosMateriais.getMateriaisLimpeza().isSuficiente(listaQtd)) {
+					this.getRecursosHumanos().getServentes().get(rg).getMatLimpeza().addGeral(listaQtd);
+					this.getRecursosMateriais().getMateriaisLimpeza().remGeral(listaQtd);
 				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
+					System.out.println("ERRO: Quantidade de materiais em estoque e insuficiente");
+					System.out.println("A requisicao nao foi processada");
 				}
-				if (this.getRecursosMateriais().getMateriaisLimpeza().getSabaoPo() >= listaAux[1]) {
-					this.getRecursosMateriais().getMateriaisLimpeza().remSabaoPo(listaAux[1]);
-					servaux.getMatLimpeza().addSabaoPo(listaAux[1]);
-					System.out.println("Requisao concluida");
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisLimpeza().getAguaSanitaria() >= listaAux[2]) {
-					this.getRecursosMateriais().getMateriaisLimpeza().remAguaSanitaria(listaAux[2]);
-					servaux.getMatLimpeza().addAguaSanitaria(listaAux[2]);
-					System.out.println("Requisao concluida");
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisLimpeza().getSabaoBarra() >= listaAux[3]) {
-					this.getRecursosMateriais().getMateriaisLimpeza().remSabaoBarra(listaAux[3]);
-					servaux.getMatLimpeza().addSabaoBarra(listaAux[3]);
-					System.out.println("Requisao concluida");
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
+			} else {
+				System.out.println("ERRO: Servente nao encontrado");
 			}
 			break;
 		case "cozinheiro":
-			Cozinheiro cozaux = this.getRecursosHumanos().getCozinheiros().get(Rg);
-			if (cozaux != null) {
+			if (this.getRecursosHumanos().getCozinheiros().get(rg) != null) {
+				for (int i = 0; i < listaMateriais.length; i++) {
+					System.out.print("Quantidade de " + listaMateriais[i] + ": ");
+					listaQtd[i] = Integer.parseInt(input.nextLine());
+				}
 
-				if (this.getRecursosMateriais().getMateriaisLimpeza().getAlvejante() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisLimpeza().remAlvejante(listaAux[0]);
-					cozaux.getMatLimpeza().addAlvejante(listaAux[0]);
+				if (this.recursosMateriais.getMateriaisLimpeza().isSuficiente(listaQtd)) {
+					this.getRecursosHumanos().getCozinheiros().get(rg).getMatLimpeza().addGeral(listaQtd);
+					this.getRecursosMateriais().getMateriaisLimpeza().remGeral(listaQtd);
 				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
+					System.out.println("ERRO: Quantidade de materiais em estoque e insuficiente");
+					System.out.println("A requisicao nao foi processada");
 				}
-				if (this.getRecursosMateriais().getMateriaisLimpeza().getSabaoPo() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisLimpeza().remSabaoPo(listaAux[0]);
-					cozaux.getMatLimpeza().addSabaoPo(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisLimpeza().getAguaSanitaria() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisLimpeza().remAguaSanitaria(listaAux[0]);
-					cozaux.getMatLimpeza().addAguaSanitaria(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
-				if (this.getRecursosMateriais().getMateriaisLimpeza().getSabaoBarra() >= listaAux[0]) {
-					this.getRecursosMateriais().getMateriaisLimpeza().remSabaoBarra(listaAux[0]);
-					cozaux.getMatLimpeza().addSabaoBarra(listaAux[0]);
-				} else {
-					System.out.println("Estoque insuficiente, espere reposicao mensal");
-				}
+			} else {
+				System.out.println("ERRO: Cozinheiro nao encontrado");
 			}
 			break;
 
@@ -767,15 +745,17 @@ public class Estoque {
 	// Funções Relatorio
 
 	public void relatorioRH() {
+		System.out.println("\n######################################");
 		this.recursosHumanos.printRH();
 	}
 
 	public void relatorioRM() {
+		System.out.println("\n######################################");
 		this.recursosMateriais.printRM();
 	}
 
 	public void relatorioGeral() {
-		this.recursosMateriais.printRM();
-		this.recursosHumanos.printRH();
+		this.relatorioRH();
+		this.relatorioRM();
 	}
 }
