@@ -1,9 +1,9 @@
 package Entidades.RecursoMaterial;
 
 public class MateriaisEscolares {
-    protected int lapis;
-    protected int caderno;
-    protected int caneta;
+    private int lapis;
+    private int caderno;
+    private int caneta;
 
     public MateriaisEscolares() {
         this.lapis = 0;

@@ -4,9 +4,9 @@ import Entidades.RecursoMaterial.*;
 
 public class RecursosMateriais {
 
-	protected MateriaisDidaticos materiaisDidaticos;
-	protected MateriaisLimpeza materiaisLimpeza;
-	protected MateriaisEscolares materiaisEscolares;
+	private MateriaisDidaticos materiaisDidaticos;
+	private MateriaisLimpeza materiaisLimpeza;
+	private MateriaisEscolares materiaisEscolares;
 
 	public RecursosMateriais() {
 		this.materiaisDidaticos = new MateriaisDidaticos();

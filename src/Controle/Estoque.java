@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Estoque {
 
-	protected RecursosHumanos recursosHumanos;
-	protected RecursosMateriais recursosMateriais;
+	private RecursosHumanos recursosHumanos;
+	private RecursosMateriais recursosMateriais;
 
 	public Estoque() {
 		this.recursosHumanos = new RecursosHumanos();

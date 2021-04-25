@@ -1,8 +1,8 @@
 package Entidades.RecursoHumano;
 
 public class Pessoa {
-	protected String rg;
-	protected String nome;
+	private String rg;
+	private String nome;
 
 	public Pessoa(String rg, String nome) {
 		this.rg = rg;

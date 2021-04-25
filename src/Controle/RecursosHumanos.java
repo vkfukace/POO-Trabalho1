@@ -5,14 +5,15 @@ import java.util.HashMap;
 
 import Entidades.RecursoHumano.*;
 
+
 public class RecursosHumanos {
 
-	protected HashMap<String, Professor> professores;
-	protected HashMap<String, Aluno> alunos;
-	protected HashMap<String, Instrutor> instrutores;
-	protected HashMap<String, Monitor> monitores;
-	protected HashMap<String, Cozinheiro> cozinheiros;
-	protected HashMap<String, Servente> serventes;
+	private HashMap<String, Professor> professores;
+	private HashMap<String, Aluno> alunos;
+	private HashMap<String, Instrutor> instrutores;
+	private HashMap<String, Monitor> monitores;
+	private HashMap<String, Cozinheiro> cozinheiros;
+	private HashMap<String, Servente> serventes;
 
 	public RecursosHumanos() {
 		this.professores = new HashMap<String, Professor>();
